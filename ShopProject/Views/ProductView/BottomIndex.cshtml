@@ -1,0 +1,78 @@
+﻿<!--使用X.PageList套件產生分頁-->
+@using X.PagedList
+@using X.PagedList.Mvc.Core
+
+@model IPagedList<ShopProject.Models.Shop.Product>
+    <!--為了讀取Session，讓程式判定是否為後台管理者，產生相對應的Layout佈局-->
+    @using Microsoft.AspNetCore.Http;
+    @inject IHttpContextAccessor HttpContextAccessor
+    @{
+        ViewBag.Admin = HttpContextAccessor.HttpContext.Session.GetString("Admin");
+        if (ViewBag.Admin == "Admin")
+        {
+            Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+        }
+        ViewData["Title"] = "Bottom";
+    }
+
+<section class="full-width-container">
+
+    <p style="font-size: 15px;margin-top: 20px;font-family: 'Fjalla One', monospace;">Shop By Product / Bottom</p>
+    <div class="item-container">
+        <div class="item-list" style="width:172px;">
+            <p style="font-family: 'Fjalla One', monospace;">Shop By Product</p>
+            <ul style="padding:20px;text-align: center;">
+                <li>
+                    <a asp-controller="ProductView" asp-action="TopIndex">Clothes</a>
+                </li>
+                <li>
+                    <a asp-controller="ProductView" asp-action="BottomIndex" style="text-decoration:underline" ;> Bottom</a>
+                </li>
+                <li>
+                    <a asp-controller="ProductView" asp-action="ShoesIndex">Shoes</a>
+                </li>
+                <li>
+                    <a asp-controller="ProductView" asp-action="AccessoriesIndex">Accessories</a>
+                </li>
+            </ul>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="container">
+            <div class="row" style="justify-content:center">
+                @foreach (var item in Model)
+                {
+
+                    <div class="col-md-6">
+                        <div class="card" style="margin-bottom: 20px;margin-top: 20px;">
+                            @*src="@Url.Content(item.ImgUrl)"才吃的到圖片*@
+                            <a asp-controller="ProductView" asp-action="ProductDetails" asp-route-model="@item.Model">
+                                <img class="item-image" src="@Url.Content(item.ImgUrl)" alt="Card image cap">
+                            </a>
+                            <div class="card-block">
+                                <h4 class="card-title">@item.Name</h4>
+                                @*<p class="item-description">Sample text. Click to select the text box.</p>*@
+                                <h3 class="price">$@item.Price</h3>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    </section>
+    <!--為了使用套件產生分頁-->
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("BottomIndex", new { page }))

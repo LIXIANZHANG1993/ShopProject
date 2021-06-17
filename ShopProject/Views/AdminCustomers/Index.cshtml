@@ -1,0 +1,82 @@
+﻿@model IEnumerable<ShopProject.Models.Shop.Customer>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<main role="main" class="pl-1 pr-1">
+
+    <h2 style="text-align: center;padding:10px;">Member List</h2>
+
+    <p>
+        <a asp-action="Create" class="btn btn-outline-dark" style=" width: 100px; font-weight:bolder; font-size: 12px;">
+            <i class="fas fa-plus" style="font-size: 12px;"></i>&nbsp;Create New
+        </a>
+    </p>
+
+    <div class="row" style="margin-right: 0;">
+        <table class="table table-striped admin-member-table-tbody">
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Password
+                    </th>
+                    <th>
+                        Address
+                    </th>
+                    <th>
+                        Phone
+                    </th>
+                    <th>
+                        Birthday
+                    </th>
+                    <th>
+                        Administrator Permission
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Password)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Address)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Phone)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Birthday)
+                        </td>
+                        <td style="text-align: center">
+                            @Html.DisplayFor(modelItem => item.Admin)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-dark">Edit</a> 
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-dark">Details</a> 
+                            <a asp-action="Delete" asp-route-id="@item.Id"class="btn btn-outline-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</main>

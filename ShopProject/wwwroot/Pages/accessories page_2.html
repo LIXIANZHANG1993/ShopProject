@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, shrink-to-fit=no">
+    <!-- 自己寫的CSS -->
+    <link rel="stylesheet" href="../style1.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+
+    <!--FORM AWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <!--GOOGLE FONTS-->
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <section id="first">
+        <!--首頁中的導覽列-->
+        <div class="contain">
+            <nav class="navbar navbar-expand-md ">
+                <a class="navbar-brand" href="https://work.smarchal.com/twbscolor/" target="_blank">
+                    <!--logo照片連結到首頁或商品頁-->
+                    <img id="logo" src="../images/logo.jpg">
+                    <!--todo logo照片-->
+                </a>
+                <!--這裡是漢堡導覽列,畫面縮小會出現-->
+                <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="../Home Page.html">HOME<span class="sr-only">(current)</span></a>
+                            <!--Home超連結到首頁-->
+                        </li>
+                        <li class="nav-item active">
+                            <div class="btn-group">
+                                <a class="nav-link" style="color:white;" href="#" target="_blank">SHOP<span
+                                        class="sr-only">(current)</span></a>
+                                <!--shop超連結到分類-->
+                                <button type="button" class="dropdown-toggle dropdown-toggle-split btn1"
+                                    data-toggle="dropdown">
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#" target="_blank">TOP</a>
+                                    <a class="dropdown-item" href="#" target="_blank">BOTTOM</a>
+                                    <a class="dropdown-item" href="#" target="_blank">SHOES</a>
+                                    <a class="dropdown-item" href="#" target="_blank">ACCERORIES</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <form class="form-inline">
+                        <!-- 購物車 / user logo-->
+                        <a class="nav-item nav-link" href="../login.html"><i class="fas fa-user"></i></a>
+                        <a class="nav-item nav-link" href="#"><i class="fa fa-shopping-cart"></i><span
+                                class="badge">3</span></a></a>
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </section>
+    <section class="slogon-container">
+        <h2 class="slogon">the best deals</h2>
+        <a href="#" class="others">shop new arrivals</a>
+    </section>
+    <div class="container item-container">
+        <div class="row">
+            <div class="col">
+                <div class="card" style="margin-bottom:20px;">
+                    <img class="item-image" src="../images/accessories/accessories1.jpg" alt="Card image cap">
+                    <div class="card-block">
+                        <h4 class="card-title">Sample Headline</h4>
+                        <p class="item-description">Sample text. Click to select the text box.</p>
+                        <h3 class="price">$ 200<i class="fas fa-shopping-cart"></i></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-container">
+                    <img class="item-image" src="../images/accessories/accessories2.jpg" alt="Card image cap">
+                    <div class="card-block">
+                        <h4 class="card-title">Sample Headline</h4>
+                        <p class="item-description">Sample text. Click to select the text box.</p>
+                        <h3 class="price">$ 200<i class="fas fa-shopping-cart"></i></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container item-container">
+        <div class="row">
+            <div class="col">
+                <div class="card card-container">
+                    <img class="item-image" src="../images/accessories/accessories3.jpg" alt="Card image cap">
+                    <div class="card-block">
+                        <h4 class="card-title">Sample Headline</h4>
+                        <p class="item-description">Sample text. Click to select the text box.</p>
+                        <h3 class="price">$ 200<i class="fas fa-shopping-cart"></i></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img class="item-image" src="../images/accessories/accessories4.jpg" alt="Card image cap">
+                    <div class="card-block">
+                        <h4 class="card-title">Sample Headline</h4>
+                        <p class="item-description">Sample text. Click to select the text box.</p>
+                        <h3 class="price">$ 200<i class="fas fa-shopping-cart"></i></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pagination-container">
+        <div class="pagination">
+            <a href="#">&laquo;</a>
+            <a href="../Pages/accessories page_1.html">1</a>
+            <a href="../Pages/accessories page_2.html">2</a>
+            <a href="#">&raquo;</a>
+        </div>
+    </div>
+    <section id="down">
+        <div class="container">
+            <div class="row">
+                <ul class="contact">
+                    <li style="text-align:center;">
+                        <p><i class="fa fa-map-marker fa-3x"></i></p>
+                        <p><strong>Location</strong></br>Taiwan</p>
+                    </li>
+                    <li style="text-align:center;">
+                        <p><i class="fa fa-phone fa-3x"></i></p>
+                        <p><strong>Phone</strong></br>(09)00-000-000</p>
+                    </li>
+                    <li style="text-align:center;">
+                        <p><i class="fa fa-envelope fa-3x"></i></p>
+                        <p><strong>Email</strong></br>contactus@.netshop.com</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <p class="copyright">&copy; Copyright 2020 .NET SHOP<img id="logo" src="../images/logo.jpg" width="40"
+                height="40">
+        </p>
+    </section>
+</body>
+
+</html>

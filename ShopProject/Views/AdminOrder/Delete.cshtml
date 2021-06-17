@@ -1,0 +1,66 @@
+﻿@model ShopProject.Models.Shop.Order
+
+@{
+    ViewData["Title"] = "Order Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    var total = Model.Price * Model.Amount;
+}
+
+<main role="main" class="pl-1 pr-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <h2 style="text-align: center; margin-top:20px;">Order Delete</h2>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+    <hr />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="card" style="width: 100%; margin:40px 0 40px 0;">
+                    <div class="card-body">
+                        <p class="card-text">
+                            <dl class="row">
+                                <dt class="col-md-4">
+                                    Purchase Id
+                                </dt>
+                                <dd class="col-md-8">
+                                    @Html.DisplayFor(model => model.PurchaseId)
+                                </dd>
+                                <dt class="col-md-4">
+                                    Product Model
+                                </dt>
+                                <dd class="col-md-8">
+                                    @Html.DisplayFor(model => model.ProductModel)
+                                </dd>
+                                <dt class="col-md-4">
+                                    Amount
+                                </dt>
+                                <dd class="col-md-8">
+                                    @Html.DisplayFor(model => model.Amount)
+                                </dd>
+                                <dt class="col-md-4">
+                                    Total
+                                </dt>
+                                <dd class="col-md-8">
+                                    @Html.DisplayFor(model => total)
+                                </dd>
+                            </dl>
+
+                            <form asp-controller="AdminOrder" asp-action="Delete" class="admin-order-delete-btn">
+                                <input type="hidden" asp-for="Id" />
+                                <input type="submit" value="Delete" class="btn btn-outline-danger" /> &nbsp;&nbsp;&nbsp;&nbsp;
+                                <a asp-controller="AdminPurchase" asp-action="Details" asp-route-id="@Model.PurchaseId" class="btn btn-outline-dark">Back To List</a>
+                            </form>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>

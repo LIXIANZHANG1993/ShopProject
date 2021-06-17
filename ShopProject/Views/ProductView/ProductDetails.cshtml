@@ -1,0 +1,101 @@
+﻿@model IEnumerable<ShopProject.Models.Shop.Product>
+@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    ViewBag.Admin = HttpContextAccessor.HttpContext.Session.GetString("Admin");
+    if (ViewBag.Admin == "Admin")
+    {
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    }
+    ViewData["Title"] = "ProductDetails";
+}
+
+
+
+@foreach (var item in Model)
+{
+<form asp-controller="Cart" asp-action="AddtoCart"
+      asp-route-model="@item.Model" asp-route-name="@item.Name"
+      asp-route-price="@item.Price"
+      asp-route-imgurl="@item.ImgUrl">
+    <p style="font-size: 15px;margin-top: 10px;">Shop By Product / Fashion and Quality</p>
+    <section id="single-itme-page" style="padding: 0 30px 30px;">
+        <div class="item-list" style="width:172px;">
+            <p style="font-family: 'Fjalla One', monospace;">Shop By Product</p>
+            <ul style="padding:20px;text-align: center;">
+                <li>
+                    <a asp-controller="ProductView" asp-action="TopIndex">Clothes</a>
+                </li>
+                <li>
+                    <a asp-controller="ProductView" asp-action="BottomIndex"> Bottom</a>
+                </li>
+                <li>
+                    <a asp-controller="ProductView" asp-action="ShoesIndex">Shoes</a>
+                </li>
+                <li>
+                    <a asp-controller="ProductView" asp-action="AccessoriesIndex" style="text-decoration:underline">Accessories</a>
+                </li>
+            </ul>
+        </div>
+        <div class="item-pic">
+            <img src="@Url.Content(item.ImgUrl)" height="660px" width="800px">
+        </div>
+        <div class="itme-detial-description">
+            <div class="item-single-name">
+                <span>@item.Name</span>
+            </div>
+            <div class="line"></div>
+            <div class="item-number">
+                <span>Product Identification：</span>
+                <span>@item.Model</span>
+            </div>
+            <div class="price">
+                <span>Price：</span>
+                <span>$@item.Price</span>
+            </div>
+            <div class="order">
+                <span>Amount：</span>
+                @*<select asp-for="@item.Amount" onchange="#" style="padding: 5px;">
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+
+            </select>*@
+
+                @*<select asp-for="@item.Amount" asp-items="new SelectList(ViewBag.AddHowMany)" class="form-control"></select>*@
+
+
+                <!--這裡的第一個參數是對應到CartController AddtoCart中的參數，所以能夠把使用者選定的value傳到參數裡面(int amount)-->
+                @Html.DropDownList("amount", (IEnumerable<SelectListItem>)ViewBag.AddHowMany)
+
+            </div>
+            <div>
+                <span>Inventory：</span>
+                <span>@item.Inventory</span>
+            </div>
+            <div class="notice">※Kind Reminder</div>
+            <div class="notice-size">Fits true to size. Take your normal size.</div>
+            <div class="notice-for-product-withdrawal">
+                <i class="fas fa-box-open" style="color:darkblue;"><span style="font-size: 15px;">7-day Appreciation Period</span></i>
+                <i class="fas fa-shipping-fast" style="color:darkblue;"><span style="font-size: 15px;">Free Refund</span></i>
+            </div>
+            <div class="btn-for-cart">
+                <button type="submit" class="btn btn-outline-dark">Add to Cart</button>
+                <button class="btn btn-outline-dark" formaction="@(Url.Action("CartIndex","Cart"))" formnovalidate="formnovalidate">Check Out</button>
+            </div>
+        </div>
+    </section>
+</form>
+ }
+
+
+
+
+

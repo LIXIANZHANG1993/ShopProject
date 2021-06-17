@@ -1,0 +1,67 @@
+﻿@model IEnumerable<ShopProject.Models.Shop.Purchase>
+
+@{
+    ViewData["Title"] = "MyOrder";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int test = 0;
+}
+<section id="full-width-item-container" >
+    <div class="item-container">
+        <div class="membercenter-list">
+            <ul>
+                <li>
+                    <a class="" asp-controller="Customer" asp-action="MemberCenter">My Account</a>
+                </li>
+                <li>
+                    <a class="" asp-controller="Customer" asp-action="MyOrder" style="text-decoration:underline;">My Orders</a>
+                </li>
+            </ul>
+        </div>
+
+
+ 
+
+
+        <div class="order_tracking">
+
+            @if (Model != null)
+            {
+            @foreach (var order in Model)
+            {
+                test = test + 1;
+
+            <span data-toggle="collapse" data-parent="#accordion"
+                  href="#test @test"><i class="fas fa-check-circle" style="padding: 10px;"></i>Order ID：@order.Id</span>
+                    <table border="1" class="order-detail">
+                        <tbody id="test @test" class="panel-collapse collapse in">
+                            <tr>
+                                <th>Payment Method：</th>
+                                <th>Cash on delivery</th>
+                            </tr>
+                            <tr>
+                                <th>Price：</th>
+                                <th>$ @order.TotalPrice</th>
+                            </tr>
+
+                            <tr>
+                                <th>Order status：</th>
+                                <th>@order.Status</th>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+            }
+            }
+            else
+            {
+        <h1 style="text-align: center; color:red;">Your order is empty</h1>
+            }
+
+
+        </div>
+    </div>
+        
+</section>
+

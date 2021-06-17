@@ -1,0 +1,365 @@
+﻿@model IEnumerable<ShopProject.Models.Shop.Product>
+
+@{
+    ViewData["Title"] = "Product Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    string id = "";
+    string css = "tab-pane fade";
+
+}
+
+<main role="main" class="pl-1 pr-1">
+    <div class="admin-product-top">
+        <h2 style="text-align:center; padding:10px;">Product List</h2>@* class="admin-product-top-span *@
+        <a asp-action="Create" class="btn btn-outline-dark" style=" width: 100px; font-weight:bolder; position:absolute;right:20px; font-size: 12px; margin-top:9px;padding-right: 20px;">
+            <i class="fas fa-plus" style="font-size: 12px;"></i>&nbsp;Create New
+        </a>
+    </div>
+
+    <div class="container col-md-10 nav-container">
+        <div class="row admin-product-tab"></div>
+        <ul class="nav nav-tabs nav-justified" style="width: 98.5%;">
+            <li class="nav-item">
+                <a class="nav-link active" href="#Clothes" id="Clothes-tab" data-toggle="tab" role="tab"
+                   aria-controls="Clothes" aria-selected="true">Clothes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#Lower" id="Bottom-tab" data-toggle="tab" role="tab" aria-controls="Lower"
+                   aria-selected="false">Bottom</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#Shoes" id="Shoes-tab" data-toggle="tab" role="tab" aria-controls="Shoes"
+                   aria-selected="false">Shoes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#Accessories" id="Accessories-tab" data-toggle="tab" role="tab"
+                   aria-controls="Accessories" aria-selected="false">Accessories</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+
+
+            <div class="tab-pane fade active show " id="Clothes" role="tabpanel" aria-labelledby="Clothes-tab">
+                <div class="container admin-product-list-container">
+                    @foreach (var item in Model)
+                    {
+                        if (item.TypeId == 1)
+                        {
+                            <div class="card text-center">
+
+
+                                <div class="card-header">
+                                    <!-- 白色上衣外套 -->
+                                </div>
+                                <div class="card-body row">
+
+
+                                    <div class="col-md-4">
+                                        <img src=@Url.Content(item.ImgUrl) alt="White Jacket"
+                                             style="max-width:55%">
+                                    </div>
+
+
+                                    <div class="col-md-8">
+                                        <table class="admin-product-table align-items-center">
+                                            <tr>
+                                                <td>Product Id</td>
+                                                <td>@item.Id</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Product Name</td>
+                                                <td>@item.Name</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Product Model</td>
+                                                <td>@item.Model</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Product Price</td>
+                                                <td>$ @item.Price</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Product Launch</td>
+                                                <td>@item.CreationDate</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Photo Path</td>
+                                                <td>@item.ImgUrl</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Inventory</td>
+                                                <td>@item.Inventory</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+                                </div>
+
+                                <div class="card-footer text-muted">
+                                    <span>
+                                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-dark">Edit</a>&nbsp;
+                                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-dark">Details</a>&nbsp;
+                                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger">Delete</a>
+                                    </span>
+                                </div>
+                            </div><!-- 白色上衣外套 card 結束 -->
+                        }
+                    }
+                </div>
+            </div><!-- 上身類 card 結束 -->
+
+
+
+
+            <div class="tab-pane fade" id="Lower" role="tabpanel" aria-labelledby="Lower-tab">
+                <div class="container admin-product-list-container">
+                    @foreach (var item2 in Model)
+                    {
+                        if (item2.TypeId == 2)
+                        {
+                            <div class="card text-center">
+                                <div class="card-header">
+                                    <!-- 灰色花邊寬褲 -->
+                                </div>
+                                <div class="card-body row">
+                                    <div class="col-md-4">
+                                        <img src=@Url.Content(item2.ImgUrl) alt="灰色花邊寬褲"
+                                             style="max-width:55%">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <table class="admin-product-table">
+                                            <tr>
+                                                <td>Product Id</td>
+                                                <td>@item2.Id</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Product Name</td>
+                                                <td>@item2.Name</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Product Type</td>
+                                                <td>@item2.TypeId</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Product Price</td>
+                                                <td>$ @item2.Price</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Product Launch</td>
+                                                <td>@item2.CreationDate</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Photo Path</td>
+                                                <td>@item2.ImgUrl</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+
+
+                                <div class="card-footer text-muted">
+                                    <span>
+                                        <a asp-action="Edit" asp-route-id="@item2.Id" class="btn btn-outline-dark">Edit</a>&nbsp;
+                                        <a asp-action="Details" asp-route-id="@item2.Id" class="btn btn-outline-dark">Details</a>&nbsp;
+                                        <a asp-action="Delete" asp-route-id="@item2.Id" class="btn btn-outline-danger">Delete</a>
+                                    </span>
+                                </div>
+                            </div><!-- 灰色花邊寬褲 card 結束 -->
+                        }
+                    }
+                </div><!-- 下身類 card 結束 -->
+            </div><!-- Bottom 頁簽 結束 -->
+
+
+
+            <div class="tab-pane fade " id="Shoes" role="tabpanel" aria-labelledby="Shoes-tab">
+                <div class="container admin-product-list-container">
+                    @foreach (var item3 in Model)
+                    {
+                        if (item3.TypeId == 3)
+                        {
+                            <div class="card text-center">
+                                <div class="card-header">
+
+                                </div>
+                                <div class="card-body row">
+                                    <div class="col-md-4">
+                                        <img src=@Url.Content(item3.ImgUrl) alt="灰色花邊寬褲"
+                                             style="max-width:55%">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <table class="admin-product-table" >
+                                            <tr></tr>
+                                            <tr></tr>
+                                            <tr></tr>
+                                            <tr>
+                                                <td>Product Id</td>
+                                                <td>@item3.Id</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Product Name</td>
+                                                <td>@item3.Name</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Product Type</td>
+                                                <td>@item3.TypeId</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Product Price</td>
+                                                <td>$ @item3.Price</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Product Launch</td>
+                                                <td>@item3.CreationDate</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Photo Path</td>
+                                                <td>@item3.ImgUrl</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+
+
+                                <div class="card-footer text-muted">
+                                    <span>
+                                        <a asp-action="Edit" asp-route-id="@item3.Id" class="btn btn-outline-dark">Edit</a>&nbsp;
+                                        <a asp-action="Details" asp-route-id="@item3.Id" class="btn btn-outline-dark">Details</a>&nbsp;
+                                        <a asp-action="Delete" asp-route-id="@item3.Id" class="btn btn-outline-danger">Delete</a>
+                                    </span>
+                                </div>
+                            </div>
+                        }
+                    }
+
+                </div>
+            </div>
+
+
+            <div class="tab-pane fade" id="Accessories" role="tabpanel" aria-labelledby="Accessories-tab">
+                <div class="container admin-product-list-container">
+                    @foreach (var item4 in Model)
+                    {
+                        if (item4.TypeId == 4)
+                        {
+                            <div class="card text-center">
+                                <div class="card-header">
+
+                                </div>
+                                <div class="card-body row">
+                                    <div class="col-md-4">
+                                        <img src=@Url.Content(item4.ImgUrl) alt="灰色花邊寬褲"
+                                             style="max-width:55%">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <table class="admin-product-table">
+                                            <tr>
+                                                <td>Product Id</td>
+                                                <td>@item4.Id</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Product Name</td>
+                                                <td>@item4.Name</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Product Type</td>
+                                                <td>@item4.TypeId</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Product Price</td>
+                                                <td>$ @item4.Price</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Product Launch</td>
+                                                <td>@item4.CreationDate</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Photo Path</td>
+                                                <td>@item4.ImgUrl</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+
+
+                                <div class="card-footer text-muted">
+                                    <span>
+                                        <a asp-action="Edit" asp-route-id="@item4.Id" class="btn btn-outline-dark">Edit</a>&nbsp;
+                                        <a asp-action="Details" asp-route-id="@item4.Id" class="btn btn-outline-dark">Details</a>&nbsp;
+                                        <a asp-action="Delete" asp-route-id="@item4.Id" class="btn btn-outline-danger">Delete</a>
+                                    </span>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+            <!--為了使用套件產生分頁-->
+            <div class="pagination-container">
+                <ul class="pagination">
+                    <li class="active"><span>1</span></li>
+                </ul>
+            </div>
+</main>
+
+<div id="toTop">
+  
+        <a href="#top">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE_WnaNTNZMA12wd873QGLMnIbmsZk--uE5w&usqp=CAU"
+                 alt="" style="width: 70px; float: right;">
+        </a>
+</div>
+

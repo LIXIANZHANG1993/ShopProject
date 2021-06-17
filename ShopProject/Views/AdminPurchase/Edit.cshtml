@@ -1,0 +1,153 @@
+﻿
+@model ShopProject.Models.Shop.Purchase
+
+@{
+    ViewData["Title"] = "Admin OrderEdit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<main role="main" class="pl-1 pr-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <h2 style="text-align: center;margin-top:20px;">Order Edit</h2>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+
+    <hr />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <form asp-action="Edit" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+                    <div class="form-group">
+                        <label class="control-label" asp-for="UserId">Member Id</label>
+                        <input class="form-control" type="text" asp-for="UserId" />
+                        <span class="text-danger" asp-validation-for="UserId"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" asp-for="CreationDate">Order Time</label>
+                        <input class="form-control" type="datetime-local" asp-for="CreationDate" />
+                        <span class="text-danger field-validation-valid" asp-validation-for="CreationDate"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" asp-for="TotalPrice">Total Price</label>
+                        <input class="form-control" type="number" data-val="true"
+                               data-val-required="The TotalPrice field is required." asp-for="TotalPrice" />
+                        <span class="text-danger field-validation-valid" asp-validation-for="TotalPrice"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" asp-for="Status">Order Status</label>
+                       @Html.DropDownList("status", (IEnumerable<SelectListItem>)ViewBag.changestate, new { @style = "width: 100%; line-height: 1.5;  padding: .375rem .75rem; color: #495057;border: 1px solid #ced4da;" })
+                        <span class="text-danger field-validation-valid" asp-validation-for="Status"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" asp-for="ReceiveName">Receiver Name</label>
+                        <input class="form-control" type="text" data-val="true" asp-for="ReceiveName" />
+                        <span class="text-danger field-validation-valid" asp-validation-for="ReceiveName"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" asp-for="ReceivePhoneNumber">Receiver Phone Number</label>
+                        <input class="form-control" type="text" data-val="true" asp-for="ReceivePhoneNumber" />
+                        <span class="text-danger field-validation-valid" asp-validation-for="ReceivePhoneNumber"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" asp-for="ReceiveAddress">Receiver Address</label>
+                        <input class="form-control" type="text" data-val="true" asp-for="ReceiveAddress" />
+                        <span class="text-danger field-validation-valid" asp-validation-for="ReceiveAddress"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" asp-for="Note">Note</label>
+                        <input class="form-control" type="text" asp-for="Note" />
+                        <span class="text-danger field-validation-valid" asp-validation-for="Note"></span>
+                    </div>
+
+                    <div class="form-group admin-order-edit-btn" style="margin-top: 40px;">
+                        <input type="submit" value="Save" class="btn btn-outline-dark" />&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a asp-action="Index" class="btn btn-outline-dark">Back To List</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+
+@*<h1>修改訂單資料</h1>
+
+
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <label asp-for="UserId" class="control-label">會員編號</label>
+                    <input asp-for="UserId" class="form-control" />
+                    <span asp-validation-for="UserId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CreationDate" class="control-label">下單時間</label>
+                    <input asp-for="CreationDate" class="form-control" />
+                    <span asp-validation-for="CreationDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TotalPrice" class="control-label">訂單總價</label>
+                    <input asp-for="TotalPrice" class="form-control" />
+                    <span asp-validation-for="TotalPrice" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Status" class="control-label">訂單狀態</label>
+                    @Html.DropDownList("status", (IEnumerable<SelectListItem>)ViewBag.changestate)
+                    <span asp-validation-for="Status" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ReceiveName" class="control-label">收件者姓名</label>
+                    <input asp-for="ReceiveName" class="form-control" />
+                    <span asp-validation-for="ReceiveName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ReceivePhoneNumber" class="control-label">收件者電話</label>
+                    <input asp-for="ReceivePhoneNumber" class="form-control" />
+                    <span asp-validation-for="ReceivePhoneNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ReceiveAddress" class="control-label">收件地址</label>
+                    <input asp-for="ReceiveAddress" class="form-control" />
+                    <span asp-validation-for="ReceiveAddress" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Note" class="control-label">訂單備註</label>
+                    <input asp-for="Note" class="form-control" />
+                    <span asp-validation-for="Note" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="儲存" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">返回</a>
+    </div>*@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

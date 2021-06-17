@@ -1,0 +1,69 @@
+﻿@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    ViewBag.Admin = HttpContextAccessor.HttpContext.Session.GetString("Admin");
+    if (ViewBag.Admin == "Admin")
+    {
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    }
+    ViewData["Title"] = "Category";
+}
+
+
+
+
+<section id="productfirst">
+    <!--因為要劃分版面，需把區域指定為容器"container"-->
+    <div class="container">
+        <!--畫表格的時候，我們會先劃一個方格: 就是"row"-->
+        <div class="row">
+
+            <!--畫完表格後，再決定每一欄(col)的大小，系統內建會自動分成12格，用col-(格數) 來決定欄寬-->
+            <!--col-3 表示每個產品拿12格中的3格-->
+            <div class="col-3">
+                <a asp-controller="ProductView" asp-action="TopIndex" target="_self">
+                    <!--用card來顯示圖片-->
+                    <div class="card bg-light">
+                        <img src="~/images/product/clothes.jpeg" class="card-img" alt="點我看更多">
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-3">
+                <a asp-controller="ProductView" asp-action="BottomIndex" target="_self">
+                    <!--用card來顯示圖片-->
+                    <div class="card bg-light">
+                        <img src="~/images/product/pants.jpeg" class="card-img" alt="點我看更多">
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-3">
+                <a asp-controller="ProductView" asp-action="ShoesIndex" target="_self">
+                    <!--用card來顯示圖片-->
+                    <div class="card bg-light">
+                        <img src="~/images/product/shoes.jpeg" class="card-img" alt="點我看更多">
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-3">
+                <a asp-controller="ProductView" asp-action="AccessoriesIndex" target="_self">
+                    <!--用card來顯示圖片-->
+                    <div class="card bg-light">
+                        <img src="~/images/product/Accessories.jpg" class="card-img" alt="點我看更多">
+                    </div>
+                </a>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+    <div class="row-three">
+        <div class="color-container"></div>
+    </div>
+
+</section>

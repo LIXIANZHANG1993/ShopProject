@@ -1,0 +1,169 @@
+﻿@model ShopProject.Models.Shop.Purchase
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<main role="main" class="pl-1 pr-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <h2 style="text-align: center;margin-top:20px;">Purchase Delete</h2>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+    <hr />
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="card" style="width: 100%; margin:40px 0 40px 0;">
+                    <div class="card-body">
+                        <p class="card-text">
+                            <dl class="row" style="margin-left:2px;">
+                                <dl class="row">
+                                    <dt class="col-md-4">
+                                        UserID
+                                    </dt>
+                                    <dd class="col-md-8">
+                                        @Html.DisplayFor(model => model.UserId)
+                                    </dd>
+                                    <dt class="col-md-4">
+                                        Order Time
+                                    </dt>
+                                    <dd class="col-md-8">
+                                        @Html.DisplayFor(model => model.CreationDate)
+                                    </dd>
+                                    <dt class="col-md-4">
+                                        Total Price
+                                    </dt>
+                                    <dd class="col-md-8">
+                                        @Html.DisplayFor(model => model.TotalPrice)
+                                    </dd>
+                                    <dt class="col-md-4">
+                                        Order Status
+                                    </dt>
+                                    <dd class="col-md-8">
+                                        @Html.DisplayFor(model => model.Status)
+                                    </dd>
+                                    <dt class="col-md-4">
+                                        Receiver Name
+                                    </dt>
+                                    <dd class="col-md-8">
+                                        @Html.DisplayFor(model => model.ReceiveName)
+                                    </dd>
+                                    <dt class="col-md-4">
+                                        Receiver Phone Number
+                                    </dt>
+                                    <dd class="col-md-8">
+                                        @Html.DisplayFor(model => model.ReceivePhoneNumber)
+                                    </dd>
+                                    <dt class="col-md-4">
+                                        Receiver Address
+                                    </dt>
+                                    <dd class="col-md-8">
+                                        @Html.DisplayFor(model => model.ReceiveAddress)
+                                    </dd>
+                                    <dt class="col-md-4">
+                                        Note
+                                    </dt>
+                                    <dd class="col-md-8">
+                                        @Html.DisplayFor(model => model.Note)
+                                    </dd>
+                                </dl>
+                        </p>
+
+                        <form asp-action="Delete" class="admin-order-delete-btn">
+                            <input type="hidden" asp-for="Id" />
+                            <input type="submit" value="Delete" class="btn btn-outline-danger" />&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a asp-action="Index" class="btn btn-outline-dark">Back To List</a>
+                        </form>
+
+                        @*<form action="/AdminCustomers/Delete/1" method="post" class="admin-member-delete-btn">
+                                <input type="hidden" data-val="true" data-val-required="The Id field is required."
+                                       id="Id" name="Id" value="1" />
+                                <input type="submit" value="Delete"
+                                       class="btn btn-danger" />&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a href="/AdminCustomers" class="btn btn-outline-dark">Back To List</a>
+                                <input name="__RequestVerificationToken" type="hidden"
+                                       value="CfDJ8OvDiUz9wwVKvLOfPwDadViQ_hGL-E0LkqZtW3vkGAfXVItfznATDEvNgaOjICqp9kzmG_ino_mtJr_rUNSM3MpWt7Ps2_iWM-WkSgqPYRSWQwRMnd_9fKiK1fCO1I3OyTPVD1posmE9-yf0hM46zeNbRActiKfgXQe9k1u8YO-_Qf7--kIY94Xn_cV-iQeMVw" />
+                            </form>*@
+                    </div>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+@*<div>
+
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                會員編號
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.UserId)
+            </dd>
+            <dt class="col-sm-2">
+                下單時間
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CreationDate)
+            </dd>
+            <dt class="col-sm-2">
+                訂單總價
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.TotalPrice)
+            </dd>
+            <dt class="col-sm-2">
+                訂單狀態
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Status)
+            </dd>
+            <dt class="col-sm-2">
+                收件者姓名
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ReceiveName)
+            </dd>
+            <dt class="col-sm-2">
+                收件電話
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ReceivePhoneNumber)
+            </dd>
+            <dt class="col-sm-2">
+                收件地址
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ReceiveAddress)
+            </dd>
+            <dt class="col-sm-2">
+                訂單備註
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Note)
+            </dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="刪除" class="btn btn-danger" /> |
+            <a asp-action="Index">返回</a>
+        </form>
+    </div>*@

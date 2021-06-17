@@ -1,0 +1,172 @@
+﻿
+
+
+
+
+@model ShopProject.Models.Shop.ViewModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+
+}
+
+<main role="main" class="pl-1 pr-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <h2 style="text-align: center; margin-top:20px;">Order List</h2>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+    <hr />
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="card" style="width: 100%; margin:40px 0 40px 0;">
+                    <div class="card-body">
+                        <p class="card-text">
+                            <section style=" display: flex; justify-content: center;  flex-wrap: wrap;">
+                                <div>
+                                    <dl class="row" style="margin-bottom: 40px;">
+                                        <dt class="col-md-6">
+                                            Purchase Id
+                                        </dt>
+                                        <dd class="col-md-6">
+                                            @Html.DisplayFor(model => model.purchases.Id)
+                                        </dd>
+                                        <dt class="col-md-6">
+                                            Order Time
+                                        </dt>
+                                        <dd class="col-md-6">
+                                            @Html.DisplayFor(model => model.purchases.CreationDate)
+                                        </dd>
+                                        <dt class="col-md-6">
+                                            Total Price
+                                        </dt>
+                                        <dd class="col-md-6">
+                                            $ @Html.DisplayFor(model => model.purchases.TotalPrice)
+                                        </dd>
+                                        <dt class="col-md-6">
+                                            Order Status
+                                        </dt>
+                                        <dd class="col-md-6">
+                                            @Html.DisplayFor(model => model.purchases.Status)
+                                        </dd>
+                                        <dt class="col-md-6">
+                                            Recipient Name
+                                        </dt>
+                                        <dd class="col-md-6">
+                                            @Html.DisplayFor(model => model.purchases.ReceiveName)
+                                        </dd>
+                                        <dt class="col-md-6">
+                                            Recipient Phone Number
+                                        </dt>
+                                        <dd class="col-md-6">
+                                            @Html.DisplayFor(model => model.purchases.ReceivePhoneNumber)
+                                        </dd>
+                                        <dt class="col-md-6">
+                                            Recipient Address
+                                        </dt>
+                                        <dd class="col-md-6">
+                                            @Html.DisplayFor(model => model.purchases.ReceiveAddress)
+                                        </dd>
+                                        <dt class="col-md-6">
+                                            Note
+                                        </dt>
+                                        <dd class="col-md-6">
+                                            @Html.DisplayFor(model => model.purchases.Note)
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div style="margin:10px 0 5px 0;">
+                                    <a asp-action="Edit" asp-route-id="@Model.purchases.Id"
+                                       class="btn btn-outline-dark">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a asp-action="Index" class="btn btn-outline-dark">Back To List</a>
+                                </div>
+                            </section>
+                        </p>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <h2 style="text-align: center; margin-top:20px;">Order Details</h2>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+    <hr />
+    <div class="row" style="margin-right:0;">
+        <table class="table admin-order-details-table" >
+            <thead style="background-color: rgb(104, 101, 101); color:rgb(255, 254, 254);">
+                <tr>
+                    <th>
+                        Order Id
+                    </th>
+                    <th>
+                        Product Name
+                    </th>
+
+                    <th>
+                        Amount
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                    <th>
+                        Total Price
+                    </th>
+                    <th>
+                        Product Model
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Orders)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PurchaseId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProductName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Amount)
+                        </td>
+                        <td>
+                            @(item.Price/item.Amount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProductModel)
+                        </td>
+                        <td style="width: 200px;">
+                            <a asp-controller="AdminOrder" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-dark">Edit</a> 
+
+                            <a asp-controller="AdminOrder" asp-action="Delete" asp-route-id="@item.Id" asp-route-purchaseid="@Model.purchases.Id" class="btn btn-outline-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</main>
+
+

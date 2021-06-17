@@ -1,0 +1,158 @@
+﻿@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    //判斷使用者是否登入才顯示購物車數量
+    //if (User.Identity.IsAuthenticated == true)
+    //{
+    //    ViewBag.count =HttpContextAccessor.HttpContext.Session.GetInt32("AmountItem");
+    //    ViewBag.counts = HttpContextAccessor.HttpContext.Session.GetInt32("AmountItemCart");
+    //    if (ViewBag.counts != null && ViewBag.counts > ViewBag.count)
+    //    {
+    //        ViewBag.counts = ViewBag.count;
+    //    };
+    //}
+    //  1.原本在cart controller的action中把購物車數量寫進session,後來發現只有購物車icon點擊時會有數字顯示，
+    //    使用者在登入後並未顯示購物車數量
+    //  2.後來在customer controller中的Login action中也寫了一個讀取購物車數量的session，結果發現使用者登入
+    //    後可以正常顯示購物車數量，但無法在新增商品到購物車時，動態顯示最新的購物車數量
+    //  3.所以才有第 8 行的判斷式，此法雖可行但真正的原因尚未查清
+    //
+    //
+    //
+    //後續發現只要session的key一樣，session的value就可以動態的改寫然後被讀取，進而顯示正確的購物車數量
+    if (User.Identity.IsAuthenticated == true)
+    {
+        ViewBag.count = HttpContextAccessor.HttpContext.Session.GetString("AmountItem");
+
+    }
+
+
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, shrink-to-fit=no">
+    <title>@ViewData["Title"] - .NET Cloth</title>
+
+
+
+
+    <!-- BS CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- 自己寫的CSS -->
+    <link rel="stylesheet" href="~/style10.css">
+
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.twzipcode-1.4.1-min.js"></script>
+
+
+    <!--FORM AWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+          integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <!--GOOGLE FONTS-->
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Nanum+Pen+Script&family=Rock+Salt&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Fjalla+One&family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section id="first">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index" target="_self">
+                <img id="logo" src="~/images/logo.jpg">
+            </a>
+            <!--這裡是漢堡導覽列,畫面縮小會出現-->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" asp-controller="Home" asp-action="Index" style="font-family:'Fjalla One',monospace;font-size:22px">Home<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Home" asp-action="ShopIndex" style="color: white; font-family: 'Fjalla One', monospace; font-size: 22px">Shop<span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0" style=" font-family: 'Fjalla One', monospace;font-size: 15px;" asp-controller="ProductView" asp-action="SearchProduct" method="get">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <span style="font-family: 'Fjalla One', monospace; font-size: 22px; color: white;">Hello   @User.Identity.Name</span>
+                        <a class="nav-item nav-link" asp-controller="Customer" asp-action="Logout" style="font-family:'Fjalla One',monospace;margin-left:50px;font-size:15px;">
+                            <i class="fas fa-sign-out-alt">&nbsp;Logout</i>
+                        </a>
+                        <a class="nav-item nav-link" asp-controller="Customer" asp-action="membercenter" style=" font-family: 'Fjalla One', monospace;font-size: 15px;">
+                            <i class="fas fa-user icon-effect">&nbsp;MemberCenter</i>
+                        </a>
+                    }
+                    @if (!User.Identity.IsAuthenticated)
+                    {
+                        <a class="nav-item nav-link" asp-controller="Customer" asp-action="Login"><i class="fas fa-user icon-effect"></i></a>
+                    }
+                    <a class="nav-item nav-link" asp-controller="Cart" asp-action="CartIndex">
+                        <i class="fa fa-shopping-cart icon-effect "></i><span class="badge" style="font-family: 'Fjalla One', monospace;">@ViewBag.count</span>
+                    </a>
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="search">
+
+
+                    <!--現在才發現，原本以為一定要在form寫asp-route-{value}資料才送的到後端，原來只要input的Name="{value}"有寫後端就抓的到，當然後端的controller參數要放一樣的值(value)-->
+                    <input class="btn btn-outline-light my-2 my-sm-0" type="submit" value="Search" />
+                </form>
+            </div>
+        </nav>
+    </section>
+
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+
+
+    <section id="down">
+        <div class="container footer-container">
+            <div class="row-four">
+                <ul class="contact">
+                    <li style="text-align:center;">
+                        <p><i class="fa fa-map-marker fa-3x"></i></p>
+                        <p><strong>Location</strong><br>Taiwan</p>
+                    </li>
+                    <li style="text-align:center;">
+                        <p><i class="fa fa-phone fa-3x"></i></p>
+                        <p><strong>Phone</strong><br>(09)00-000-000</p>
+                    </li>
+                    <li style="text-align:center;">
+                        <p><i class="fa fa-envelope fa-3x"></i></p>
+                        <p><strong>Email</strong><br>contactusn.etshop.com</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <p class="copyright">
+            &copy; Copyright 2020 .NET SHOP<img id="logo" src="~/images/logo.jpg" width="40"
+                                                height="40">
+        </p>
+    </section>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

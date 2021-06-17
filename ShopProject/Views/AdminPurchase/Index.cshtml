@@ -1,0 +1,72 @@
+﻿@model IEnumerable<ShopProject.Models.Shop.Purchase>
+
+@{
+    ViewData["Title"] = "Order";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<main role="main" >
+
+
+    <h2 style="text-align: center;margin-top:20px;">Order</h2>
+    
+    <div class="row" style="padding-left: 60px; margin-right: 0;">
+        <div class="col-md-11">
+            <table class="table table-striped admin-order-table-thead" style="padding: 0 10px;border-collapse: inhert!important;">
+                <thead class="bg-Secondary " style="font-size: 14px;">
+                    <tr>
+                       <th scope="col"></th>
+                            <th scope="col">Member Id</th>
+                            <th scope="col">Order Time</th>
+                            <th scope="col">Total Price</th>
+                            <th scope="col">Order Status</th>
+                            <th scope="col">Receiver Name</th>
+                            <th scope="col">Receiver Phone Number</th>
+                            <th scope="col">Receiver Address</th>
+                            <th scope="col">Note</th>
+                            
+                    </tr>
+                </thead>
+                <tbody class="admin-order-table-tbody">
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <th scope="row"></th>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UserId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreationDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TotalPrice)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ReceiveName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ReceivePhoneNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ReceiveAddress)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Note)
+                        </td>
+
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-dark">Edit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-dark">Details</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger">Delete</a>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</main>

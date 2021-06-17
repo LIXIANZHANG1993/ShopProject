@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = ".NET Clothes";
+}
+
+<section id="second">
+    <div class="contain">
+        <div class="row-one">
+            <div class="col-md-8 offset-md-2 text-center pb-5">
+                <h1 style="font-family: 'Covered By Your Grace', monospace;">Fashion and Quality</h1>
+                <h4 style="font-family: 'Covered By Your Grace', monospace;">.NET Clothes</h4>
+                <div id="carousel1" class="carousel slide" data-ride="carousel">
+                    <!-- data-ride="carousel" → 預設是五秒變換一次 -->
+                    <ol class="carousel-indicators">
+                        <!-- Indicators -->
+                        <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel1" data-slide-to="1"></li>
+                        <li data-target="#carousel1" data-slide-to="2"></li>
+                    </ol>
+                    <!-- Wrapper for slides -->
+                    <!-- d-block w-100 →  display:block 為佔據一行，與寬度100 -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                         <a asp-controller="Home" asp-action="ShopIndex"><img src="./images/Home Page/Home Page1.jpg" class="d-block w-100"></a>   
+                        </div>
+                        <div class="carousel-item">
+                            <a asp-controller="Home" asp-action="ShopIndex"><img src="./images/Home Page/Home Page2.jpg" class="d-block w-100"></a>
+                        </div>
+                        <div class="carousel-item">
+                            <a asp-controller="Home" asp-action="ShopIndex"><img src="./images/Home Page/Home Page3.jpg" class="d-block w-100"></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+    
+    <!--產品區 ID為productfirst-->
+    
+
+
+
+
+

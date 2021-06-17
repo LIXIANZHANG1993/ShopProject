@@ -1,0 +1,64 @@
+﻿@model ShopProject.Models.Shop.Customer
+@{
+    ViewData["Title"] = "Login";
+}
+
+
+<section id="login">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="row row-special d-flex justify-content-center">
+                    <h2 style="font-family: 'Covered By Your Grace', monospace; font-size: 70px;margin-top:20px">
+                        <b>Log in</b> or Sign Up
+                        <!--&nbsp;是空白格的意思-->
+                    </h2>
+                </div>
+                <div class="row row-special2">
+                    <div class="container con-layout">
+                        <h3 class="title" style="font-family: 'Covered By Your Grace', monospace; margin-top:40px;font-size:35px"><b>Log in</b></h3>
+                        <form asp-controller="Customer" asp-action="Login" method="post">
+                            <div class="form-group" style="font-family: 'Fjalla One', monospace; font-size: 18px">
+                                <label asp-for="Email">Email Address</label>
+                                <input asp-for="Email" type="email" class="form-control" id="exampleInputEmail1"
+                                       aria-describedby="emailHelp" placeholder="Enter Email"><span asp-validation-for="Email" class="text-danger"></span>
+                                <small id="emailHelp" class="form-text text-muted">
+                                    We'll never share your email with
+                                    anyone else.
+                                </small>
+                            </div>
+                            <div class="form-group" style="font-family: 'Fjalla One', monospace; font-size: 18px">
+                                <label asp-for="Password">Password</label>
+                                <input asp-for="Password" type="password" class="form-control" id="exampleInputPassword1"
+                                       placeholder="Password"><span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                            @*<div class="form-group form-check"
+                                 style="font-family: 'Nanum Pen Script', cursive; font-size: 20px">
+                                
+                            </div>*@
+                            <button type="submit" class="btn btn-outline-dark btn-1">LOG IN</button>@*這裡用submit是對的嗎，httpmethod應該是post吧*@
+
+                            <button formaction="@(Url.Action("SignUp","Customer"))" formnovalidate="formnovalidate" class="btn btn-outline-dark btn-2">SIGN UP</button>
+                            @*1.問一下兩個submit是對的嗎
+                                2.button type="submit" formaction="@(Url.Action("ResendOTP"))" formnovalidate="formnovalidate"這邊是為了跳過驗證階段直接進行Httpget *@
+                        </form>
+                        <span class="text-danger" style="font-family: 'Fjalla One', monospace;; font-size: 24px; ">@TempData["Message"]</span>
+                    </div>
+                </div>
+                <div class="row row-special">
+                    <p> </p>
+                </div>
+
+            </div>
+
+            <div class="col-md-7 col-layout d-flex justify-content-center align-items-center w-100 ">
+                <img src="~/images/girl.jpg" width="100%">
+
+            </div>
+
+        </div>
+    </div>
+</section>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

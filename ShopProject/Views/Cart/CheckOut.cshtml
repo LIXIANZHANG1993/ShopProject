@@ -1,0 +1,56 @@
+﻿@model ShopProject.Models.Shop.Purchase
+@{ 
+    ViewData["Title"] = "CheckOut";
+}
+
+
+
+
+<div class="border-order">
+    <div class="order-step-area">
+        <div></div>
+        <div class="order-step-1-2">
+            <i class="fas fa-check-circle" style="padding: 10px;"></i>
+            
+            <p>CHECK YOUR ORDER</p>
+        </div>
+        <div class="order-step-2-2">
+            <i class="fas fa-handshake" style="padding: 10px;"></i>
+            
+            <p>THANK YOU!</p>
+        </div>
+    </div>
+</div>
+
+    <section>
+        <div class="complete_your_order">
+            <i class="fas fa-clipboard-check"><span>Thank you for your order!</span></i>
+            <div class="checkout-line"></div>
+            <span>
+                Thank you for shopping with us, your order details below：
+                <br>
+            </span>
+            <table border="1" class="order-detail">
+                <tbody>
+                    <tr>
+                        <th>Product Identification：</th>
+                        <th>@Model.Id</th>
+                    </tr>
+                    <tr>
+                        <th>Payment Method：</th>
+                        <th>Cash on delivery</th>
+                    </tr>
+                <th>Price：</th>
+                <th>$ @Model.TotalPrice</th>
+                <tr>
+                    <th>Order Status：</th>
+                    <th>Order processing</th>
+                </tr>
+
+                </tbody>
+            </table>
+            <div class="complete-order-btn">
+                <a asp-controller="Home" asp-action="Index"><button class="btn btn-outline-dark" onclick="#">Back to Homepage</button></a>
+            </div>
+        </div>
+    </section>

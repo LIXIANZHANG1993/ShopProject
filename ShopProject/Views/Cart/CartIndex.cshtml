@@ -1,0 +1,241 @@
+﻿@model ShopProject.Models.Shop.ViewModel
+
+@{
+    int total = 0;
+    if (Model.carts != null)
+    {
+        total = (Model.carts.Sum(total => total.Price * total.Amount)) + 60;
+
+    }
+    else if (Model.carts == null)
+    {
+        total = total;
+    }
+    ViewData["Title"] = "MyCart";
+}
+
+
+@if (Model.carts.Count() != 0)
+{
+    <div class="border-order">
+        <div class="order-step-area">
+            <div></div>
+            <div class="order-step-1">
+                <i class="fas fa-check-circle" style="padding:10px;"></i>
+                <p style="font-family: 'Fjalla One', monospace;">CHECK YOUR ORDER</p>
+            </div>
+            <div class="order-step-2">
+                <i class="far fa-handshake" style="padding: 10px;"></i>
+                <p style="font-family: 'Fjalla One', monospace;">THANK YOU!</p>
+            </div>
+        </div>
+    </div>
+
+    <p class="order-items">
+        <img src="~/images/icon01.gif" width:"20px" ; height:"20px">
+        CHECK YOUR ORDER
+    </p>
+
+
+    <table column="6" class="order-table">
+        <thead style="font-family: 'Fjalla One', monospace;">
+            <tr>
+                <th width="30%">Product</th>
+                <th>Product Identification</th>
+                <th>Price</th>
+                <th>Amount</th>
+                <th>Item subtotal</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        @foreach (var item in Model.carts)
+        {
+            <tbody>
+                <tr>
+                    <td width="20%">
+                        <div class="info">
+
+                            <img src="@Url.Content(item.ImgUrl)" class="prepare_to_pay">
+                            <a asp-controller="ProductView" asp-action="ProductDetails" asp-route-model="@item.Model" class="item-order-name">&nbsp;@item.Name</a>
+
+                        </div>
+                    </td>
+                    <td width="9%">
+                        <span>Product Identification</span>
+                        <div class="">@item.Model</div>
+                    </td>
+                    <td width="9%">
+                        <span>Price</span>
+                        <div class="">$ @item.Price</div>
+                    </td>
+                    <td width="9%">
+                        <span>Amount</span>
+                        <a asp-controller="Cart" asp-action="Decreaseitem" asp-route-model="@item.Model"><input type="button" value=" - " /></a>
+                        <input readonly="readonly" value="@item.Amount" style=" width: 40px; text-align: center;" />
+                        <a asp-controller="Cart" asp-action="Additem" asp-route-model="@item.Model"><input type="button" value=" + " /></a>
+
+                    </td>
+                    <td width="9%">
+                        <span>Item subtotal</span>
+                        <div class="">$ @(item.Price * item.Amount)</div>
+                    </td>
+                    <td width="9%">
+                        <span>Delete</span>
+                        <a asp-controller="Cart" asp-action="DeleteItem" asp-route-model="@item.Model"><i class="fas fa-trash-alt" style="color:black;"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+
+        }
+
+
+
+
+
+
+
+    </table>
+
+    <div class="cart-bill-table">
+        <ul>
+            <li>
+                <span>Subtotal</span>
+                <span>$ @Model.carts.Sum(total => total.Price * total.Amount)</span>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <span>Shipping</span>
+                <span>$ 60</span>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <span>Total Price</span>
+                <span>$ @total</span>
+            </li>
+        </ul>
+    </div>
+    <p colspan="12" class="order-items">
+        <img src="~/images/icon01.gif" width="20px" ; height="20px" ;>
+        DELIVERY INFORMATION
+    </p>
+
+    <form asp-controller="Cart" asp-action="CheckOut" method="post">
+        <table>
+            <tbody>
+                <tr>
+                    <th colspan="2" class="delivery-information">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>Name：</th>
+                                    <th>
+                                        <input asp-for="purchases.ReceiveName" type="text" maxlength="30">
+                                        <span asp-validation-for="purchases.ReceiveName" class="text-danger"></span>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>Moblie：</th>
+                                    <th>
+                                        <input asp-for="purchases.ReceivePhoneNumber" type="tel" maxlength="15">
+                                        <span asp-validation-for="purchases.ReceivePhoneNumber" class="text-danger"></span>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>Address：</th>
+                                    <th>
+                                        <input asp-for="purchases.ReceiveAddress" type="text" maxlength="30">
+                                        <span asp-validation-for="purchases.ReceiveAddress" class="text-danger"></span>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>Note：</th>
+                                    <th style="position:absolute">
+                                        <input asp-for="purchases.Note" type="text" maxlength="50">
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+
+                                    </th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+        <div style="text-align:center;width:100%;">
+            <a asp-controller="ProductView" asp-action="TopIndex"><button type="button" class="btn btn-outline-dark">Continue Shopping</button></a>
+            <button type="submit" class="btn btn-outline-dark" value="Check Out">Check Out</button>
+        </div>
+    </form>
+}
+
+else if (Model.carts.Count() == 0)
+{
+    <div class="border-order">
+        <div class="order-step-area">
+            <div></div>
+            <div class="order-step-1">
+                <i class="fas fa-check-circle" style="padding: 10px;"></i>
+                <p>CHECK YOUR ORDER</p>
+            </div>
+            <div class="order-step-2">
+                <i class="far fa-handshake" style="padding: 10px;"></i>
+                <p>THANK YOU!</p>
+            </div>
+        </div>
+    </div>
+
+    <p class="order-items">
+        <img src="~/images/icon01.gif" width="20px" ; height="20px" ;>
+        CHECK YOUR ORDER
+    </p>
+
+    <table column="6" class="order-table">
+        <thead>
+            <tr>
+                <th width="30%">Product</th>
+                <th>Product Identification</th>
+                <th>Price</th>
+                <th>Amount</th>
+                <th>Item subtotal</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr width=45%>
+
+                <td></td>
+                <td style="font-size:2rem;font:bold;color:brown">
+                    @ViewData["Error"]
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="order-count-container">
+        <div class="checkout-btn" style="text-align: center;">
+            <a asp-controller="ProductView" asp-action="TopIndex"><button type="button" class="btn btn-outline-dark">Continue Shopping</button></a>
+        </div>
+    </div>
+}
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+
+
+
+
+
+
+
+
+
+

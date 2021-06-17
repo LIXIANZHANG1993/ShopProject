@@ -1,0 +1,101 @@
+﻿@model ShopProject.Models.Shop.Product
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<main role="main" class="pl-1 pr-1">
+
+
+    <div class="row" style="margin-right: 0;">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <h2 style="text-align: center; margin-top:20px;">Product Delete</h2>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    </div>
+    <hr />
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="card" style="width: 100%; margin:40px 0 40px 0;">
+                    <div class="card-body">
+                        <p class="card-text">
+                            <dl class="row" style="margin-left:2px;">
+                                <dl class="row">
+                                    <dt class="col-md-4">
+                                        Product Name
+                                    </dt>
+                                    <dd class="col-md-8">
+                                        @Html.DisplayFor(model => model.Name)
+                                    </dd>
+                                    <dt class="col-md-4">
+                                        Product Model
+                                    </dt>
+                                    <dd class="col-md-8">
+                                        @Html.DisplayFor(model => model.Model)
+                                    </dd>
+                                    <dt class="col-md-4">
+                                        Product Price
+                                    </dt>
+                                    <dd class="col-md-8">
+                                        @Html.DisplayFor(model => model.Price)
+                                    </dd>
+                                    <dt class="col-md-4">
+                                        Product Launch
+                                    </dt>
+                                    <dd class="col-md-8">
+                                        @Html.DisplayFor(model => model.CreationDate)
+                                    </dd>
+
+
+                                    <dt class="col-md-4">
+                                        Product Image
+                                    </dt>
+                                    <dd class="col-md-8">
+                                        @Html.DisplayFor(model => model.ImgUrl)
+                                    </dd>
+                                    <dt class="col-md-4">
+                                        Pruduct Type
+                                    </dt>
+                                    <dd class="col-md-8">
+                                        @Html.DisplayFor(model => model.Type.Name)
+                                    </dd>
+                                    <dt class="col-md-4">
+                                        Inventory
+                                    </dt>
+                                    <dd class="col-md-8">
+                                        @Html.DisplayFor(model => model.Inventory)
+                                    </dd>
+                                </dl>
+                        </p>
+
+                        @*<form asp-action="Delete" method="post" class="admin-pruduct-delete-btn">
+                                <input type="hidden" data-val="true" data-val-required="The Id field is required."
+                                       id="Id" name="Id" value="1" />
+
+                                <input type="submit" value="Delete" class="btn btn-danger " />&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a href="/AdminProducts" class="btn btn-outline-dark">Back To List</a>
+
+                                <input name="__RequestVerificationToken" type="hidden"
+                                       value="CfDJ8OvDiUz9wwVKvLOfPwDadVg4v9cbXRi_DJgjDuYizRyrfe8Y0W2SQ6ywsjCx1K63yoHLOiYqU2xncy8y_1Igp64LUMCGxKKpMmvBCaZOX4h2m8tmYhC9bKkP9gpUQH36yotEf_DVm978aU6RKetP6PoDh-S7dChVVAknguaspGqpfP4lz80jLWormk4PKDh_hw" />
+                            </form>*@
+
+                        <form asp-action="Delete" class="admin-pruduct-delete-btn">
+                            <input type="hidden" asp-for="Id" />
+                            <input type="submit" value="Delete" class="btn btn-outline-danger" /> &nbsp;&nbsp;&nbsp;&nbsp;
+                            <a asp-action="Index" class="btn btn-outline-dark">Back To List</a>
+                        </form>
+
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

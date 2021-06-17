@@ -1,0 +1,134 @@
+﻿@model ShopProject.Models.Shop.ViewModel
+
+@{
+    ViewData["Title"] = "MemberCenter";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<section id="full-width-container">
+    <div class="membercenter-list">
+        <ul>
+            <li>
+                <a class="" asp-controller="Customer" asp-action="MemberCenter" style="text-decoration:underline;">My Account</a>
+            </li>
+            <li>
+                <a class="" asp-controller="Customer" asp-action="MyOrder">My Orders</a>
+            </li>
+        </ul>
+    </div>
+    <div id="test">
+        <div id="member-mdify">
+            <div class="container">
+                <h3>Member Management</h3>
+                <h6>§ Please fill in the all section(s) of this form §</h6>
+                <h6>§ We shall keep your personal data confidential at all times §</h6>
+                <h6 style="color:red">@TempData["status"]</h6>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-12 col-md-12 col-sm-12">
+                <ul class="nav nav-tabs nav-justified">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#basic-information" id="basic-information-tab" data-toggle="tab" role="tab" aria-controls="basic-information" aria-selected="true">Basic Information</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#member-password" id="member-password-tab" data-toggle="tab" role="tab" aria-controls="member-password" aria-selected="false">Member Password</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade active show" id="basic-information" role="tabpanel" aria-labelledby="basic-information-tab">
+                        <form asp-controller="Customer" asp-action="MemberCenter" method="post">
+                            <div class="member-modify-table" style="text-align:-webkit-center;">
+                                <h5>Membership Information</h5>
+                                <!-- table-
+                            <div class="member-modify-table col-md-12" style="text-align:-webkit-center;">-->
+                                <div class="box-line">
+                                    <table class="borderLine ">
+                                        <!--<colgroup>
+                                        <col width="20%">
+                                        <col width="30%">
+                                        <col width="20%">
+                                        <col width="30%">
+                                    </colgroup>-->
+                                        <tbody>
+                                            <tr>
+                                                <th>Name</th>
+                                                <td colspan="3" class="radio">
+                                                    <input asp-for="customers.Name" type="text" maxlength="30" style="width:275px;">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Birthday</th>
+                                                <td>
+                                                    <input asp-for="customers.Birthday" type="date" />
+                                                </td>
+                                                <th>Gender</th>
+                                                <td>
+                                                    <input asp-for="customers.Gender" type="radio" value="Male">
+                                                    <label>Male</label>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;
+
+                                                    <input asp-for="customers.Gender" type="radio" value="Female">
+                                                    <label>Female</label>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <th>Email</th>
+                                                <td colspan="3">
+                                                    <input asp-for="customers.Email" type="email" style="width:275px;">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Phone</th>
+                                                <td colspan="3">
+                                                    <input asp-for="customers.Phone" type="tel" style="width:275px;">
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <th>Address</th>
+                                                <td colspan="3" class="radio">
+                                                    <input asp-for="customers.Address" type="text" style="width:275px">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- table end -->
+                            </div>
+                            <div class="modify-data-check">
+                                <p><button type="submit" class="btn-a">Submit</p>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="tab-pane fade" id="member-password" role="tabpanel" aria-labelledby="member-password-tab">
+                        <form asp-controller="Customer" asp-action="ChangePassword" method="post">
+                            <ul>
+                                <li>
+                                    Original Password：&nbsp;&nbsp;&nbsp;<input type="text" asp-for="changePassWords.CheckOriginalPassword">
+                                </li>
+                                <li>
+                                    New Password ：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" asp-for="changePassWords.NewPassword">
+                                </li>
+                                <li>
+                                    Comfirm Password：<input type="text" asp-for="changePassWords.ConfirmedPassword">
+                                </li>
+                            </ul>
+                            <div class="modify-data-check ">
+                                <p><button type="submit" class="btn-a">Submit</p>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

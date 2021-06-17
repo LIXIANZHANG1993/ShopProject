@@ -1,0 +1,121 @@
+.border-order{
+    padding: 25px;
+    width:100%;
+    margin-bottom: 10px;
+}
+
+.order-step-area{
+    display: grid;
+    width:100%;
+    margin: 0 auto;
+    grid-template-columns: 2fr 3fr 3fr 2fr;
+}
+
+.order-step-1{
+    background-color: #e5e4e4;
+    text-align: center;
+    border: 1px solid #6c6a68;
+    padding: 30px 15px;
+    margin: 30px 30px 50px;
+}
+
+.order-step-2{
+    text-align: center;
+    border: 1px solid #6c6a68;
+    padding: 30px 15px;
+    margin: 30px 30px 50px;
+}
+
+.border-order .prepare_to_pay{
+    height: 80px;
+    width: 50px;
+}
+
+.order-items{
+    font-size: 110%;
+    text-align: left;
+    height: 30px;
+    color: #6c6a68;
+    padding: 10px 5px;
+    border-bottom: 0px;
+}
+
+.order-table{
+    width: 100%;
+    margin: 0px auto;
+    margin-right: 20px;
+}
+
+.order-count{
+    padding: 6px;
+    text-align: center;
+}
+
+.order-total-price{
+    padding: 6px;
+    margin: auto ;
+    text-align: center;
+    border: 1px solid #6c6a68;
+    width: 15%;
+}
+
+.order-table td{
+    border-bottom: 1px solid #e4e4e4;
+    padding: 15px 10px;
+}
+
+.order-table th{
+    padding: 10px 15px;
+    
+}
+
+.order-count-container{
+    margin-top: 10px;
+    width: 100%;
+    height: 130px;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.order-count-container button{
+    border-radius: 10px;
+    box-shadow: 0 1px #999;
+    padding: 3px 8px;
+    margin-bottom: 10px;
+}
+
+.order-count-container button:hover {
+    background-color:#ddd;
+    color: white;
+  }
+
+.checkout-btn{
+    text-align: center;
+    padding: 8px 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.radio_btn_address{
+    float: left;
+}
+
+.item-order-name{
+    text-decoration:none;
+    color:black;
+}
+
+.item-order-name:hover{
+    text-decoration:none;
+}
+
+@media (max-width: 767px) {
+
+ .order-step-area{
+    width:300px;
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+
+}
+
+}

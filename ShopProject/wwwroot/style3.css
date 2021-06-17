@@ -1,0 +1,494 @@
+/*------------------------navbar-------------------------------*/
+
+/*會員登入跟購物車設定*/
+i
+{
+    font-size: 20px;
+    color: #667179de;
+}
+
+/*標籤*/
+span.badge 
+{
+    background-color: #c09e6b;
+    color: white;
+    margin-left: 5px;
+    border-radius: 50%;
+}
+
+
+
+/*設定滑鼠滑過下拉式選單
+div .dropdown-menu li:hover .sub-menu {visibility: visible;}
+div .dropdown:hover .dropdown-menu {display: block;}*/
+
+/*設定logo圖片大小*/
+#first #logo
+{
+    width: 50px
+}
+
+/*導覽列底色*/
+.navbar
+{
+    background-color: #253F5B;
+}
+
+.navbar-nav .active>.nav-link, 
+.nav-link.active, 
+.navbar-nav .nav-link.show, 
+.navbar-nav .show>.nav-link 
+
+{
+  color: #fff;
+}
+.btn1
+{
+  background-color: #253F5B;
+  border: none;
+}
+
+
+/*調整導覽列字體尺寸*/
+a
+{
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1.5;
+    
+}
+
+  /*下拉式選單方框的底色和框框顏色*/
+.navbar .navbar-nav .dropdown-menu 
+{
+    background-color: #caab68;
+    border:none;
+}
+
+/*下拉式選單字體顏色白色*/
+.navbar .navbar-nav .dropdown-menu .dropdown-item 
+{
+    color: #fdfdfd;
+}
+
+/*滑過下拉式選單的底色和字體顏色,滑過會變粗體*/
+.navbar .navbar-nav .dropdown-menu .dropdown-item:hover,
+.navbar .navbar-nav .dropdown-menu .dropdown-item:focus,
+.navbar .navbar-nav .dropdown-menu .dropdown-item.active 
+{
+  color: #72644f;
+  background-color: #a18d70;
+  font-weight: bold;
+  line-height: 1.5;
+}
+.navbar-light .navbar-toggler{
+  color: rgba(0,0,0,.5);
+  border-color: rgba(0,0,0,.1);
+}
+
+.navbar-toggler{
+  margin-left: 70%;
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(12, 1, 8, 0.212)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler.navbar-toggler {
+  border-color:  rgba(12, 1, 8, 0.212);
+} 
+/*整個購物車下拉設定
+.shopping-cart {
+    margin: 20px 0;
+    float: right;
+    background: white;
+    width: 320px;
+    position: relative;
+    border-radius: 3px;
+    padding: 20px;}*/
+
+
+ /*第一層設定*/
+ .shopping-cart-top 
+ /* {
+   border-bottom: 1px solid #E8E8E8;
+   padding-bottom: 15px;
+ } */
+/*第一層總金額浮動靠右設定*/    
+/* .shopping-cart-total 
+{
+     float: right;
+} */
+
+/*購物清單*/
+/* .shopping-cart-items 
+{    
+   padding-top: 20px;
+}
+.shopping-cart-items > li 
+{
+       margin-bottom: 18px;
+} */
+/*清單商品照片*/
+img .product 
+{
+  float: left;
+  margin-right: 12px;
+}
+   
+   .item-name
+{
+  display: block;
+  float:right;
+  padding-top: 10px;
+  font-size: 16px;
+   }
+   
+.item-price
+{
+  color: black;
+  margin-right: 8px;
+  float:right;
+   }
+   
+.item-quantity 
+{
+  color: red;
+  float:right;
+   }
+
+/*隔開背景色塊的白色區塊*/
+/* #second .row-one
+{
+    background-color: #d7b095;
+    height: 50px;
+}   */
+
+.icon-effect:hover{
+color: #c09e6b;
+}
+
+/* Your Shopping List字體 */
+.modal-header #exampleModalLabel{
+  font-family:'Gloria Hallelujah', cursive;
+  font-weight: bolder;
+}
+
+/* table欄位 */
+.modal-body .shopping-table{  
+  text-align: center;
+  width: 100%;
+}
+
+/* table第一行欄位字體 */
+.table-col-first,.table-col-second,.table-col-third{
+  text-align: center;
+  font-weight: bold;
+  font-size:40px;
+  font-family:'East Sea Dokdo';
+  
+}
+
+.table-col img{
+  width:100px;
+  margin: 2px;
+}
+
+#Item-Quantity1,#Item-Quantity2,#Item-Quantity3{
+  width: 40%;
+}
+
+/*背景色塊*/
+#second .row-one
+{
+  background-color: #d7b095;
+  height: 80%;
+}   
+
+.row-two .contain{
+  background-color: #d7b095;
+  height: 50px;
+}
+
+#second h1
+{
+    /*font-family: 'Gloria Hallelujah', cursive;*/
+    font-family: 'East Sea Dokdo', cursive; 
+    font-size: 100px;
+}
+#second h4
+{
+    /*font-family: 'Gloria Hallelujah', cursive;*/ 
+    font-family: 'East Sea Dokdo', cursive; 
+    font-size: 40px;
+    margin-top: -30px;
+
+}
+
+/*-------------------------種類頁----------------------------------*/
+#productfirst .card{
+  overflow: hidden;/* 自動隱藏超出的圖片 */
+  opacity: 0.7;/* 圖片透明度(0.6 → 半透明) */
+  width: 100%;
+  margin-top: 80px;
+  border-style: none;
+}
+
+
+#productfirst .clothes{
+  height:19.7em;
+}
+
+#productfirst .card:hover{
+  opacity: 1;/* 圖片透明度(1: → 不透明)*/
+  transform:scale(1.2,1.2);/* 縮放功能，可細分為X軸與Y軸的縮放：scaleX()、scaleY() */
+}
+
+#productfirst{
+  background-color: antiquewhite;
+}
+
+#productfirst .row-three .color-container{
+  background-color: antiquewhite;
+  height: 80px;
+} 
+
+/*---------------------- log in and register_form------------------------*/
+#login{
+	
+	background-color: #e9bac0;
+
+}
+
+#login .container
+{
+  margin-top: 0%;
+}
+
+#login h3.title
+{
+  font-family: 'East Sea Dokdo', cursive; 
+  font-size: 60px;
+  margin-top: 50px;
+}
+/* 調整圖片大小 */
+#login img{
+	
+	margin-top: 50px;
+	margin-bottom: 50px;
+	width:100%;
+	}
+
+
+/* @中小畫面時 */
+@media (max-width:764px) {
+	
+	#login img{
+	
+	margin-top: 0px;
+  
+	margin-bottom: 0px;
+	width:110%;
+	}
+
+    
+  }
+
+
+
+#login .col-layout{
+	background: hsl(0, 0%, 100%);
+	height:auto;
+}
+
+#login form{
+
+	padding:50px 0px;
+	background: hsl(0, 0%, 100%);
+	margin-top: 30px;
+}
+
+#login .con-layout{
+
+	margin-bottom: 100px;
+
+}
+
+#login .row-special{
+	background: #e9bac0;
+	min-height: 50px;
+}
+
+
+#login .row-special2{
+	background: hsl(0, 0%, 100%);
+}
+
+
+#login .btn-outline-secondary {
+  color:rgb(42, 165, 159);
+  background-color: #fff;
+  border-color: rgb(42, 165, 159);
+  font-family: 'East Sea Dokdo', cursive;
+  font-size: 20px;
+}
+#login .btn-outline-secondary:hover,#login .btn-outline-secondary:focus,
+#login .btn-outline-secondary:active:hover
+{
+  color: #fff;
+  background-color: #e9bac0;
+  border-color: #e9bac0;
+  font-family: 'East Sea Dokdo', cursive;
+  font-weight: bold;
+  font-size: 20px;
+}
+#login .btn-1 {
+    margin-left: 15%;
+}
+
+#login .btn-2 {
+    margin-left: 20%;
+}
+
+#login .btn-3 {
+    margin-left: 35%;
+}
+
+
+/* ---------------------- items_page ----------------- */
+
+/* slogan */
+
+section.slogon-container{
+    text-align: left;
+    /* margin-left: 20px;
+    margin-right: 20px; */
+    background-color:#d7b095;
+    font-family: 'Noto Serif TC', serif; 
+}
+
+h2.slogon {
+  margin-left: 80px;
+}
+
+
+.others{
+  text-align: left;
+  border-width: 2px;
+  border-color: #000000 ;
+  padding-bottom: 2px;
+  letter-spacing: 1px;
+  border-style: solid;
+  border-bottom-width: 0;
+  color: #000000 ;
+  height:196px;
+  width: 23px;
+  margin-left: 80px;
+}
+
+.others:hover{
+  text-decoration: none;
+}
+
+/* ----- items ----- */
+
+.item-container{
+  width: 900px;
+  /* margin: 30px auto 60px;  */
+  background-color:#d7b095;
+
+}
+
+.item-container h4,p,h3{
+  text-align:center;
+}
+
+.item-image{
+  object-fit: cover;
+  overflow: visible;
+  width: 240px;
+  height: 240px;
+  margin:auto;
+}
+
+img:hover {
+  opacity:0.50;
+}
+
+.card.card-container{
+  margin-bottom:20px;
+}
+
+/* page number */
+
+.pagination-container {
+  height: 10%;
+  margin:0 auto;
+  width:175px;
+  margin-top: 20px;
+}
+
+/* Pagination links */
+.pagination a {
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+  text-align:center;
+}
+
+/* Style the active/current link
+
+.pagination-container a.active {
+  background-color: dodgerblue;
+  color: white;
+} */
+
+/* Add a grey background color on mouse-over */
+.pagination-container a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+
+/*---------------------- footer------------------------*/
+
+
+#down {
+    padding: 1rem 0;
+    text-align:center;
+    height: 180px;
+    width: 100%;
+}
+  
+.row-five{
+    text-align: center;
+}
+  
+.contact li {
+    width: 90px;
+    height: 80px;
+    display: inline-block;
+    list-style-type: none;
+    margin: 0 1em;
+    text-align: center;
+}
+  
+.contact p {
+    text-align: center;
+    font-size:8px;
+}
+    
+.contact {
+    display: inline-block;
+    margin: 0 auto;
+    padding-left: 0; 
+    text-align: center;
+}
+  
+.footer-container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10px;
+}

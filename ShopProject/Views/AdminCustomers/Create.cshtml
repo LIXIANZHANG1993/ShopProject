@@ -1,0 +1,93 @@
+﻿@model ShopProject.Models.Shop.Customer
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<main role="main" class="pl-1 pr-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <h2 style="text-align: center;margin-top:20px;">New Member</h2>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+
+    <hr />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <form asp-action="Create"  method="post">
+
+                    <div class="form-group" > 
+                        <label class="control-label" asp-for="Name">Member Name</label>
+                        <input class="form-control" type="text" id="Name" asp-for="Name" />
+                        <span class="text-danger field-validation-valid" asp-validation-for="Name"
+                              data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="form-group" >
+                        <label class="control-label" asp-for="Email">Member Email</label>
+                        <input class="form-control" type="text" data-val="true"
+                               asp-for="Email" id="Email" name="Email" value="" />
+                        <span class="text-danger field-validation-valid" data-valmsg-for="Email"
+                             asp-validation-for="Email"></span>
+                    </div>
+                    <div class="form-group" >
+                        <label class="control-label" asp-for="Password">Member Password</label>
+                        <input class="form-control" asp-for="Password" data-val="true"
+                               data-val-required="The Password field is required." id="Password" 
+                                />
+                        <span class="text-danger field-validation-valid" data-valmsg-for="Password"
+                              asp-validation-for="Password"></span>
+                    </div>
+                    <div class="form-group" >
+                        <label class="control-label" asp-for="Address">Member Address</label>
+                        <input class="form-control" asp-for="Address" id="Address"  />
+                        <span class="text-danger field-validation-valid" data-valmsg-for="Address"
+                              asp-validation-for="Address"></span>
+                    </div>
+                    <div class="form-group" >
+                        <label class="control-label" asp-for="Phone">Member Phone</label>
+                        <input class="form-control"  asp-for="Phone"  />
+                        <span class="text-danger field-validation-valid" data-valmsg-for="Phone"
+                              asp-validation-for="Phone"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" asp-for="Phone">Member Birthday</label>
+                        <input class="form-control" type="datetime-local" data-val="true"
+                               data-val-required="The Birthday field is required." asp-for="Phone" 
+                               />
+                        <span class="text-danger field-validation-valid" data-valmsg-for="Birthday"
+                              asp-validation-for="Phone"></span>
+                    </div>
+                    <div class="form-group form-check" >
+                        <label class="form-check-label" >
+                            <input class="form-check-input" asp-for="Admin"  />@Html.DisplayNameFor(model => model.Admin)
+                            
+                        </label>
+                    </div>
+                    <div class="form-group admin-member-creation-btn" style="margin-top: 40px;">
+                        <input type="submit" value="Create" class="btn btn-outline-dark" />&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a asp-action="Index" class="btn btn-outline-dark">Back to List</a>
+                    </div>
+                    @*<input name="__RequestVerificationToken" type="hidden"
+                           value="CfDJ8OvDiUz9wwVKvLOfPwDadVisDa9tAXFZQcFtAHsrZqaQPwUim_g7O1JMHBMS4apq13o6vVy-uGtne0wcFF8lNTpYBC_qyXU5a7XyPBoHTgIoqlWeDIGkLNx33RBdzw2on0dkL4N-DcINdnSDSOKoDYRhP3nHoKARXPjxKRjTZBRf0MB9QoPqjxjTIWAlimSjbQ" /><input name="Admin" type="hidden" value="false" />*@
+                </form>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+
+
+</main>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,1373 @@
+body 
+{
+    font-family: 'Fjalla One', monospace;
+    }
+/*------------------------navbar-------------------------------*/
+
+
+    /*會員登入跟購物車設定*/
+/*設定logo圖片大小*/
+#first #logo
+{
+    width: 50px
+}
+
+#first i
+{
+    font-size: 20px;
+    color: #667179de;
+}
+
+#first i:hover{
+    color: rgba(202, 160, 96, 0.836)
+  }
+  
+#first .navbar
+{
+    background-color: #253F5B;
+    
+}
+
+/*標籤*/
+span.badge 
+{
+    background-color: rgba(202, 160, 96, 0.836);
+    color: white;
+    margin-left: 5px;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+/*清單商品照片*/
+img .product 
+{
+  float: left;
+  margin-right: 12px;
+}
+   
+   .item-name
+{
+  display: block;
+  float:right;
+  padding-top: 10px;
+  font-size: 16px;
+   }
+   
+.item-price
+{
+  color: black;
+  margin-right: 8px;
+  float:right;
+   }
+   
+.item-quantity 
+{
+  color: red;
+  float:right;
+   }
+
+
+.icon-effect:hover{
+color: #c09e6b;
+}
+
+/* Your Shopping List字體 */
+.modal-header #exampleModalLabel{
+  font-family:'Gloria Hallelujah', cursive;
+  font-weight: bolder;
+}
+
+/* table欄位 */
+.modal-body .shopping-table{  
+  text-align: center;
+  width: 100%;
+}
+
+/* table第一行欄位字體 */
+.table-col-first,.table-col-second,.table-col-third{
+  text-align: center;
+  font-weight: bold;
+  font-size:40px;
+  font-family:'East Sea Dokdo';
+  
+}
+
+.table-col img{
+  width:100px;
+  margin: 2px;
+}
+
+#Item-Quantity1,#Item-Quantity2,#Item-Quantity3{
+  width: 40%;
+}
+
+/*背景色塊*/
+#second .row-one
+{
+  background-color: #d7b095;
+  height: 80%;
+}   
+
+.row-two .contain{
+  background-color: #d7b095;
+  height: 50px;
+}
+
+#second h1
+{
+    /*font-family: 'Gloria Hallelujah', cursive;*/
+    font-family: 'East Sea Dokdo', cursive; 
+    font-size: 100px;
+}
+#second h4
+{
+    /*font-family: 'Gloria Hallelujah', cursive;*/ 
+    font-family: 'East Sea Dokdo', cursive; 
+    font-size: 40px;
+    margin-top: -30px;
+
+}
+
+
+/*-------------------------種類頁----------------------------------*/
+#productfirst .card{
+  overflow: hidden;/* 自動隱藏超出的圖片 */
+  opacity: 0.7;/* 圖片透明度(0.6 → 半透明) */
+  width: 100%;
+  margin-top: 80px;
+  border-style: none;
+}
+
+
+#productfirst .clothes{
+  height:19.7em;
+}
+
+#productfirst .card:hover{
+  opacity: 1;/* 圖片透明度(1: → 不透明)*/
+  transform:scale(1.2,1.2);/* 縮放功能，可細分為X軸與Y軸的縮放：scaleX()、scaleY() */
+}
+
+#productfirst{
+  background-color: antiquewhite;
+}
+
+#productfirst .row-three .color-container{
+  background-color: antiquewhite;
+  height: 80px;
+} 
+
+/*---------------------- log in and register_form------------------------*/
+#login{
+	
+	background-color: #e9bac0;
+
+}
+
+
+#login h3.title
+{
+  margin-top: 20px;
+}
+
+
+/* 調整圖片大小 */
+#login img{
+	
+	margin-top: 50px;
+	margin-bottom: 50px;
+	width:100%;
+	}
+
+
+/* @中小畫面時 */
+@media (max-width:764px) {
+	
+	#login img{
+	
+	margin-top: 0px;
+  
+	margin-bottom: 0px;
+	width:110%;
+	}
+}
+
+
+
+#login .col-layout{
+	background: hsl(0, 0%, 100%);
+	height:auto;
+}
+
+#login form{
+
+	/* padding:50px 0px; */
+	background: hsl(0, 0%, 100%);
+	margin-top: 30px;
+}
+
+#login .con-layout{
+
+	margin-bottom: 100px;
+
+}
+
+#login .row-special{
+	background: #e9bac0;
+	min-height: 50px;
+}
+
+
+#login .row-special2{
+	background: hsl(0, 0%, 100%);
+}
+
+
+#login .btn-outline-secondary {
+    color: rgb(42, 165, 159);
+    background-color: #fff;
+    border-color: rgb(42, 165, 159);
+    font-family: 'Fjalla One', monospace;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 160px;
+}
+    #login .btn-outline-secondary:hover, #login .btn-outline-secondary:focus,
+    #login .btn-outline-secondary:active:hover {
+        color: #fff;
+        background-color: #e9bac0;
+        border-color: #e9bac0;
+        font-family: 'Fjalla One', monospace;
+        font-weight: bold;
+        font-size: 20px;
+    }
+#login .btn-1
+{
+  margin-left: 140px;
+}
+
+#login .btn-2
+{
+  margin-left: 40px;
+}
+#login .btn-3 {
+    margin-left: 35%;
+    margin-top: 10px;
+}
+
+/* ---------------------- items_page ----------------- */
+
+
+
+/* slogan */
+
+/* 5/17 修改部分
+
+將section.slogon-container 和h2.slogon刪除
+
+section.slogon-container{
+    text-align: left;
+    font-family: 'Noto Serif TC', serif; 
+} 
+
+
+h2.slogon {
+  margin-left: 40px;
+  padding: 10px;
+} */
+
+
+/* ----- items ----- */
+
+/* 5/17 新增部分 */
+
+.item-list a {
+    font-size: 20px;
+    color: black;
+    font-weight: lighter;
+    padding:10px;
+}
+
+
+.item-list li{
+  list-style:none;
+  line-height: 24px;
+  padding: 2px;
+}
+
+.item-list li:hover{
+  text-decoration:underline;
+}
+
+.item-list p {
+    font-size: 28px;
+    line-height: 20px;
+    color: #222;
+    display: block;
+    font-weight: bold;
+    font-family: 'Fjalla One', monospace;
+    line-height: inherit;
+}
+
+#full-width-container .card{
+  margin: 20px;
+}
+
+.item-container{
+  display:grid;
+  grid-template-columns: 1fr 4fr;
+
+}
+
+@media (max-width: 980px) {
+    .item-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 70%;
+        margin: auto;
+    }
+
+    .item-list {
+        margin: auto;
+        padding: 20px;
+    }
+}
+.item-container .card:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+
+}
+
+.item-container h4,p,h3{
+  text-align:center;
+}
+
+.item-image {
+    object-fit: cover;
+    overflow: visible;
+    width: 300px;
+    height: 320px;
+    margin: auto;
+    margin-top:20px;
+    border-radius:10px;
+    
+}
+
+/* 5/17 修改img:hover為#full-width-item-container img:hover */
+
+#full-width-item-container img:hover {
+  opacity:0.50;
+}
+
+/* page number */
+
+.pagination-container {
+  height: 10%;
+  margin:0 auto;
+  width:175px;
+  margin-top: 20px;
+}
+
+/* Pagination links */
+.pagination a {
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+  text-align:center;
+}
+
+
+/* Add a grey background color on mouse-over */
+.pagination-container a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+#full-width-item-container img{
+  margin: auto;
+}
+
+.container .col-md-6 a {
+  text-align:center;
+}
+
+/*---------------------- footer------------------------*/
+#down {
+    padding: 1rem 0;
+    text-align: center;
+    height: 180px;
+    width: 100%;
+}
+  
+.row-five{
+    text-align: center;
+}
+  
+.contact li {
+    width: 90px;
+    height: 80px;
+    display: inline-block;
+    list-style-type: none;
+    margin: 0 1em;
+    text-align: center;
+}
+  
+.contact p {
+    text-align: center;
+    font-size:8px;
+}
+    
+.contact {
+    display: inline-block;
+    margin: 0 auto;
+    padding-left: 0; 
+    text-align: center;
+}
+  
+.footer-container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10px;
+}
+
+
+/*----------------------商品單頁------------------------*/
+
+
+#single-itme-page{
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr ;
+  align-content: center;
+}
+
+
+.item-pic img{
+  width: 90%;
+  height: 90%;
+  padding: 0 20px 20px;
+}
+
+#single-itme-page span{
+  font-size: 20px;
+  padding: 30px;
+}
+
+.btn-for-cart{
+  text-align: center;
+  padding: 20px;
+}
+
+.item-single-name{
+  padding-top: 5px;
+}
+
+.notice{
+  margin-top: 20px;
+}
+
+.notice-for-product-withdrawal{
+  padding: 20px;
+  text-align: center;
+}
+
+.btn-for-cart button{
+  border-radius: 10px;
+  box-shadow: 0 1px #999;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+
+.btn-for-cart button:hover {
+  background-color:#ddd;
+  color: white;
+}
+
+
+.itme-detial-description{
+  position: relative;
+  box-sizing: border-box;
+  padding: 1em;
+  border: 3px solid rgba(255,255,255,0.23);
+  text-align: left;
+  background-color: rgba(0,0,0,0.05);
+  letter-spacing: 1px;
+  height: 500px;
+}
+
+.line{
+  width: 100%;
+  height: 2px;
+  background-color: rgba(255,255,255,0.23);
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+@media (max-width: 980px){
+
+    #single-itme-page {
+        padding: 30px;
+        display: grid;
+        grid-template-columns: 1fr;
+        align-content: center;
+        font-family: 'Fjalla One', monospace;
+    }
+
+}
+
+#min{
+  width: 25px;
+  height: 35px;
+  border: 1px solid #aaa;
+  background: #f8f8f8;
+}
+
+#add{
+  width: 25px;
+  height: 35px;
+  border: 1px solid #aaa;
+  background: #f8f8f8;
+}
+
+.qty{
+  width: 40px;
+  height: 35px;
+  text-align: center;
+  border: 0;
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+}
+
+/*----------------------check_out page-- 5/21新增----------------------*/
+
+.border-order{
+  padding: 25px;
+  width:100%;
+  margin-bottom: 10px;
+}
+
+.order-step-area{
+  display: grid;
+  width:100%;
+  margin: 0 auto;
+  grid-template-columns: 2fr 3fr 3fr 2fr;
+}
+
+.order-step-1{
+  text-align: center;
+  border: 2px solid #6c6a68;
+  padding: 30px 15px;
+  margin: 30px 30px 50px;
+  font-weight:bold;
+  background-color: #e5e4e4;
+}
+
+.order-step-2{
+  text-align: center;
+  border: 1px solid #6c6a68;
+  padding: 30px 15px;
+  margin: 30px 30px 50px;
+}
+
+img.prepare_to_pay{
+  height: 100px;
+  width: 70px;
+}
+
+.order-table{
+  width: 98%;
+  align-self: auto;
+  margin-right: 20px;
+}
+
+
+.order-items{
+  font-size: 110%;
+  height: 30px;
+  color: #6c6a68;
+  border-bottom: 0px;
+  text-align: left;
+  border-bottom: 1px solid #e4e4e4;
+  width: 95%;
+  margin: auto;
+}
+
+
+.item-order-name{
+  text-decoration:none;
+  color:black;
+}
+
+.item-order-name:hover{
+  text-decoration:none;
+}
+
+@media (max-width: 767px) {
+
+.order-step-area{
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: 1fr;
+}
+
+}
+
+@media (max-width: 1024px){
+
+  .order-table tr td:first-child {
+    width: 100%;
+    display: block;
+    margin: 20px;
+  }
+
+  .order-table tr td {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    font-size: 13px;
+    width: 20%;
+  }
+
+  .order-table tr th {
+    display: none;
+    padding: 10px 0;
+    vertical-align: middle;
+    text-align: center;
+    align-self: auto;
+  }
+
+  .order-table[column="7"] td {
+    width: 16.45%;
+  }
+
+  .order-table td > span {
+    display: block !important;
+    margin-bottom: 15px;
+    color: #000;
+    margin-bottom: 20px;
+  }
+
+}
+
+.order-table td > span {
+  display: none;
+
+}
+
+.order-table th {
+  padding: 10px 0;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.order-table td {
+  padding: 20px 0;
+  vertical-align: middle;
+  text-align: center;
+  color: #6b6b6b;
+}
+
+.cart-bill-table{
+  margin-right: 40px;
+  width: 90%;
+  margin: auto;
+  border-top: 1px solid #e4e4e4;
+}
+
+.cart-bill-table span {
+  width: 120px;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.cart-bill-table li{
+  padding: 10px 0;
+  vertical-align: middle;
+  text-align: right;
+  list-style: none;
+  
+}
+
+.delivery-information{
+  padding: 40px;
+}
+
+.delivery-information th{
+  padding: 5px;
+}
+
+.info{
+  display: inline-block !important;
+}
+
+/*----------------------complete_order page------------------------*/
+
+
+.order-step-1-2{
+  text-align: center;
+  border: 1px solid #6c6a68;
+  padding: 30px 15px;
+  margin: 30px 30px 50px;
+}
+
+.order-step-2-2{
+  text-align: center;
+  border: 2px solid #6c6a68;
+  padding: 30px 15px;
+  margin: 30px 30px 50px;
+  font-weight:bold;
+  background-color: #e5e4e4;
+}
+
+section .complete_your_order{
+  width: 80%;
+  text-align: center;
+  padding: 1em;
+  background-color: rgba(0,0,0,0.05);
+  letter-spacing: 1px;
+  margin: auto;
+}
+.complete_your_order button{
+  border-radius: 10px;
+  box-shadow: 0 1px #999;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+.complete-order-btn{
+  padding: 20px;
+}
+
+.complete_your_order th{
+  border-top: 0px;
+  text-align:center;
+}
+
+table.order-detail{
+  width: 80%;
+  border: 1px solid #666;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.checkout-line{
+width: 100%;
+height: 2px;
+background-color: rgba(255,255,255,0.23);
+margin-bottom: 1em;
+}
+
+.complete_your_order span{
+  font-size: 20px;
+}
+
+
+/* -------------會員個人帳戶管理-------------- */
+
+
+
+
+/*0524new*/
+
+
+.member-head {
+    text-align: center;
+    margin-top: 15px;
+    background-color: #d7b095;
+}
+
+.member-table {
+    border: 1px solid #cac4beab;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 2rem;
+}
+
+    .member-table th {
+        padding: 10px;
+        border-color: darkgrey;
+    }
+
+
+    .member-table th, .member-table td {
+        border: 1px solid;
+    }
+
+#member-modify h3 {
+    margin-top: 10px;
+}
+
+
+h6, h5 {
+    text-align: center;
+}
+
+.container-memeber {
+    margin-top: 10px;
+}
+
+/* table置中 */
+#form {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+
+/* table格線 */
+.borderLine th, .borderLine td {
+    border: 1px solid rgba(134, 121, 104, 0.829);
+    padding: 5px;
+}
+
+.borderLine th {
+    background-color: #e4d6c0;
+}
+
+.borderLine td {
+    background-color: #fdf8f1;
+}
+
+
+/* 聯絡地址下拉式選單欄位設定 */
+.zipcode {
+    width: 5em;
+    height: 25px;
+    background-color: white;
+    color: #000000;
+}
+
+.modify-data-check p {
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+}
+
+.modify-data-check p {
+    font-weight: bolder;
+}
+
+#member-modify-body {
+    background-image: url("https://images.pexels.com/photos/1166644/pexels-photo-1166644.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+}
+
+.fa-edit {
+    color: rgba(0, 0, 0, 0.801);
+}
+
+/* 確認修改的按鈕設定 */
+.btn-a{
+  background-color:rgb(201, 197, 197);
+  color:red;
+  width: 110px;
+  height: 35px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 5px;
+  border: none;
+  margin-left: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px; /* 5/21新增 */
+  font-weight: bold;
+}
+
+/* 確認修改按鈕 */
+.btn-a:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  color:black;
+  text-decoration: none;
+}
+
+
+/* 確認修改按鈕 */
+.btn-a:active{
+  background-color: rgb(250, 219, 42);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#member-password ul{
+  list-style-type: none;
+  text-align: center;
+}
+
+#member-password li{
+  padding:15px;
+  font-weight: bold;
+}
+
+#member-mdify{
+  padding: 20px;
+  position: relative;
+  margin-right: 50px;
+  margin-top: 20px;
+}
+
+#member-mdify h3{
+  margin-top: 20px;
+}
+
+
+div #member-mdify{
+  padding: 20px;
+  position: relative;
+  margin-right: 50px;
+  margin-top: -20px;
+
+}
+
+#member-mdify h3{
+  margin-top: 20px;
+}
+
+
+/* table置中 */
+#form{
+  display:flex;
+  justify-content: center;
+  margin-top:20px;
+  margin-bottom:30px;
+}
+
+
+/* table格線 */
+.borderLine th,.borderLine td{
+  border: 1px solid rgba(134, 121, 104, 0.829);
+  padding: 5px;
+} 
+
+.borderLine th{
+  background-color: #e4d6c0;
+}
+
+.borderLine td{
+  background-color: #fdf8f1;
+}
+
+
+/* 聯絡地址下拉式選單欄位設定 */
+.zipcode {
+  width: 5em;
+  height: 25px;
+  background-color: white;
+  color: #000000 ;
+
+}
+
+.modify-data-check p{
+  font-weight: bolder;
+  display:flex;
+  justify-content: center;
+}
+
+.modify-data-check p{
+  font-weight: bolder;
+}
+
+#member-modify-body {
+  background-image:  url("https://images.pexels.com/photos/1166644/pexels-photo-1166644.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500") ;
+
+}
+
+.fa-edit{
+  color: rgba(0, 0, 0, 0.801);
+}
+
+/* 確認修改的按鈕設定 */
+.btn-a{
+  background-color:rgb(201, 197, 197);
+  color:red;
+  width: 110px;
+  height: 35px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 5px;
+  border: none;
+  margin-left: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  
+}
+
+/* 確認修改按鈕 */
+.btn-a:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  color:black;
+  text-decoration: none;
+}
+
+
+/* 確認修改按鈕 */
+.btn-a:active{
+  background-color: rgb(250, 219, 42);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#member-password ul{
+  list-style-type: none;
+  text-align: center;
+}
+
+#member-password li{
+  padding:15px;
+  font-weight: bold;
+}
+
+#member-mdify{
+  padding: 20px;
+  position: relative;
+  margin-right: 50px;
+  margin-top: 20px;
+}
+
+#member-mdify h3{
+  margin-top: 20px;
+}
+
+
+div #member-mdify{
+  padding: 20px;
+  position: relative;
+  margin-right: 50px;
+  margin-top: 20px;
+
+}
+
+#member-mdify h3{
+  margin-top: 20px;
+}
+
+#full-width-container {
+    display:grid;
+    grid-template-columns: 1fr 4fr;
+
+}
+
+#full-width-container nav {
+    list-style: none;
+    line-height: 24px;
+    padding: 2px;
+}
+
+@media (max-width: 767px) {
+
+    #full-width-container {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+.membercenter-list nav {
+    list-style: none;
+    line-height: 24px;
+    padding: 2px;
+    margin:20px;
+}
+
+
+/*----------------------order status------------------------*/
+#center_menu {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    margin: 10px;
+}
+
+#center_menu ul{
+  list-style: none;
+}
+
+#center_menu p{
+  font-size: 28px;
+  color: rgb(34, 34, 34);
+  display: block;
+  font-weight: bold;
+  font-family: "HM Sans Bold", "ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, ãƒ¡ã‚¤ãƒªã‚ª, Meiryo, "ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯", "MS PGothic", sans-serif;
+  margin-top: 20px;
+}
+
+#center_menu li{
+  list-style: none;
+  line-height: 24px;
+  padding: 2px;
+  margin:20px;
+}
+
+#center_menu a{
+  color: #000000;
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+
+#full-width-item-container .order_tracking {
+    padding: 20px;
+    border: 3px solid #3326570a;
+    box-shadow: 0 2px #999;
+    position: relative;
+    margin-right: 50px;
+    margin-top: 20px;
+}
+
+.order_tracking th{
+  text-align: center;
+  padding: 5px;
+}
+
+.order_tracking table{
+  margin: 20px;
+  width: 50%;
+}
+
+@media (max-width: 767px) {
+  #center_menu{
+    display: grid;
+    grid-template-columns:1fr;
+    margin: 10px;
+  }
+}
+
+.membercenter-list a {
+    font-size: 20px;
+    color: #495057;
+    font-weight: lighter;
+    padding: 20px;
+    list-style:none;
+    margin:10px;
+}
+
+.membercenter-list li {
+    list-style: none;
+    line-height: 24px;
+    padding: 2px;
+    margin:20px;
+}
+
+
+/*----------------------Admin member------------------------*/
+
+main .table{
+  margin: 20px;
+  border: 2px solid #a1a1a1;    /*/外框線的寬度*
+  padding: 10px 10px;           /*與圖片的間隔距離*/ 
+  background: #ffffff;          /*框框底色*/
+  border-radius: 15px;          /*框框邊角的曲度*/
+}
+
+main .table a{
+  /* box-shadow:inset 0px 1px 0px 0px #f4f6f7;
+	background:linear-gradient(to bottom, #d1d4d6 5%, #bfc2c5 100%);
+	background-color:#bddbfa;
+	border-radius:6px;
+	border:1px solid #acacb1;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 9px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #343536; */
+  border-radius: 5px;
+  color: white; 
+  border: none;
+  padding: 10px 20px;
+  opacity: 0.6;
+  background-color: #424B54;
+  
+}
+
+.admin-member-table-tbody a{
+  font-size: 14px;
+}
+
+main .table a:hover {
+	/* background:linear-gradient(to bottom, #f8fafc 5%, #d9dcdf 100%);
+	background-color:#afb4b9; */
+  opacity: 1
+}
+
+main h1{
+  padding: 20px;
+}
+
+main {
+    font-family: 'Fjalla One', monospace;
+}
+
+
+
+/* ---------------------後台產品新增------------------ */
+
+.form-group{
+  font-size: 16px;
+  color: rgb(54, 52, 52);
+  font-weight: bold;
+}
+
+/* 產品新增-商品圖片新增 */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
+
+/* 產品新增-商品圖片新增 */
+.button-wrapper {
+position: relative;
+width: 150px;
+text-align: center;
+margin: 20% auto;
+}
+
+/* 產品新增-商品圖片新增 */
+.button-wrapper span.admin-product-creation-img-label {
+position: relative;
+z-index: 0;
+display: inline-block;
+width: 100%;
+background: #e0e5e7;
+cursor: pointer;
+color: rgb(133, 127, 127);
+padding: 10px 0;
+/* text-transform:uppercase; */
+font-size:14px;
+font-weight: bold;
+margin-bottom: 40px;
+}
+/* 產品新增-商品圖片新增 */
+#upload {
+  display: inline-block;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 50px;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* 產品新增、返回按鈕 */
+.admin-product-creation-btn{
+  display:flex;
+  justify-content: center;
+
+}
+
+
+/* -------------------後台產品編輯--------------- */
+
+/* .admin-product-details-card{
+  display:flex;
+  justify-content: center;
+} */
+
+/* 產品編輯、返回按鈕 */
+.admin-product-edit-btn{
+  display:flex;
+  justify-content: center;
+}
+
+/* input[readonly]
+{
+    background-color:white;
+} */
+
+
+/* -------------------後台產品刪除--------------- */
+
+/* 產品刪除、返回按鈕 */
+.admin-pruduct-delete-btn{
+  display:flex;
+  justify-content: center;
+  width: 100%;
+  margin-top:20px;
+}
+
+
+/* -------------------後台會員新增--------------- */
+
+/* 會員新增、返回按鈕 */
+.admin-member-creation-btn{
+  display:flex;
+  justify-content: center;
+}
+
+
+/* -------------------後台會員編輯--------------- */
+
+/* 會員編輯、返回按鈕 */
+.admin-member-edit-btn{
+  display:flex;
+  justify-content: center;
+}
+
+/* -------------------後台會員刪除--------------- */
+
+/* 會員刪除、返回按鈕 */
+.admin-member-delete-btn{
+  display:flex;
+  justify-content: center;
+  width: 100%;
+  margin-top:40px;
+}
+
+
+/* 5/25 */
+
+/* -------------------後台訂單列表--------------- */
+
+/* btn大小 */
+.admin-order-table-tbody a{
+  font-size:12px;
+  margin: 5px;
+}
+
+/* thead top對齊 */
+.admin-order-table-thead thead tr th{
+  vertical-align:top;
+}
+
+
+/* -------------------後台訂單編輯--------------- */
+
+
+/* 訂單編輯、返回按鈕 */
+.admin-order-edit-btn{
+  display:flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+
+/* -------------------後台訂單詳細資料--------------- */
+
+/* 欄位色調格行變色 */
+.admin-order-details-table tr:nth-child(even){
+  background: rgb(226, 223, 223)  
+}
+
+.admin-order-details-table{
+margin-top: 30px;
+}
+
+
+/* -------------------後台訂單刪除--------------- */
+
+/* 訂單刪除、返回按鈕 */
+.admin-order-delete-btn{
+  display:flex;
+  justify-content: center;
+  width: 100%;
+  margin-top:40px;
+}
